@@ -1,0 +1,31 @@
+.header {
+    height: 70px;
+    background-color: #0a0a3f;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header_nav {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_nav-items {
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header_nav-items:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

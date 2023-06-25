@@ -4,36 +4,33 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-   
+    overflow-y: hidden;
+    background:-moz-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
+    background:-webkit-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
+    background:-o-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
+    background:-ms-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
+    background:radial-gradient(circle at 0% 0%, #0A0A3F 45%, #d49d35 100%); 
 }
 
 .heroBanner_content {
-    color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 30px #0a0a3f ;
-    background:-moz-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
+    min-width: 370px;
+    width: 30%;
+}
 
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
-
-    /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
-
-    /* ie 10+ */
-    background:-ms-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
-
-    /* global 92%+ browsers support */
-    background:radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
+.heroBanner_content-image {
+     margin-top: 150px;
 }
 
 .heroBanner_content-title {
     font-size: 40px;
+    background: linear-gradient(to right, #fde371, #d49d35);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .heroBanner_content-desc {
@@ -42,9 +39,32 @@
 
 .heroBanner_content-title, 
 .heroBanner_content-desc {
-    width: 60%;
     font-weight: 600;
     text-align: center;
     margin: 10px;
     letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 1200px) {
+    .heroBanner {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heroBanner_content {
+        margin: 50px 0;
+        min-width: 80%;
+    }
+
+    .heroBanner_content-title {
+        font-size: 20px;
+    }
+
+    .heroBanner_content-image {
+        margin-top: 0;
+        width: 90%;
+        height: auto;
+    }
 }

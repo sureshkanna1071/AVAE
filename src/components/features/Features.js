@@ -4,9 +4,20 @@ import ProductCard from '../productcard/ProductCard'
 
 const Features = () => {
   return (
-    <div className='features'>
-       <ProductCard />
+    <div id='features'>
+      <h1>Top Sellers</h1>
+      <div className='features_container'>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
     </div>
+    
   )
 }
 

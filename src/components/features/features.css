@@ -1,6 +1,21 @@
-.features {
-    height: 700px;
+#features {
+    background-color: #0a0a3f;
+    color: white;
+    padding: 20px;
+}
+
+#features h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.features_container {
+    height: auto;
+    min-height: 700px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    grid-gap: 15px;
+    gap: 15px;
 }

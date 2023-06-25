@@ -4,6 +4,7 @@ import HeroBanner from './components/herobanner/HeroBanner';
 import Features from './components/features/Features';
 import Footer from './components/footer/Footer';
 import Specs from './components/specs/Specs';
+import About from './components/about/About';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
      <HeroBanner />
      <Specs />
      <Features />
+     {/* <About /> */}
      <Footer />
    </>
   );

@@ -5,6 +5,7 @@ import Features from './components/features/Features';
 import Footer from './components/footer/Footer';
 import Specs from './components/specs/Specs';
 import About from './components/about/About';
+import Products from './components/products/Products';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
      <Header />
      <HeroBanner />
      <Specs />
+     <Products />
      <Features />
      {/* <About /> */}
      <Footer />

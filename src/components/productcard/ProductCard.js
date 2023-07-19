@@ -3,16 +3,16 @@ import "./productCard.css"
 import { Button } from '@mui/material'
 import Pic02 from "../../assets/Pic02.png"
 
-const ProductCard = () => {
+const ProductCard = ({id, name, imageSrc, videoUrl}) => {
   return (
     <div className='card'>
       <div className='card-image'>
-        <img width="250px" src={Pic02} alt='tv'  />
+        <img width="250px" src={imageSrc} alt='tv'  />
       </div>
       <hr width="90%" />
       <div className='card-details'>
-          <h4>LuminaVision 40X [40 inches]</h4>
-          <p> ₹ 29,999 </p>
+          <h4>{name}</h4>
+          <p> ₹50,000  </p>
       </div>
         
     </div>

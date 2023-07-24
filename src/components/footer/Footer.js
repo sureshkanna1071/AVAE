@@ -14,7 +14,7 @@ const Footer = () => {
         <a href='mailto:matha.agenc@gmail.com'><EmailIcon sx={{color: "white", fontSize: "30px", "&:hover": {color: "#fde371"}, margin: "0 10px"}} /></a>
         <a href='tel:8098845333' target='_blank'><LocalPhoneIcon sx={{color: "white", "&:hover": {color: "#fde371"}, fontSize: "30px", margin: "0 10px"}} /></a>
       </div>
-      <p>ALL Rights Reserved 2023</p>
+      <p>All Rights Reserved 2023</p>
     </div>
   )
 }

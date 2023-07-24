@@ -4,7 +4,7 @@
 
 .header {
     height: 80px;
-    background-color: #0a0a3f;
+    background-color: #000;
     color: whitesmoke;
     display: flex;
     justify-content: space-around;
@@ -12,6 +12,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    box-shadow: 0 0 5px #aaaaaa;
 }
 
 .header_nav {
@@ -28,12 +29,13 @@
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    color: #fde371;
+    color: #EEEEEE;
 }
 
 .header_menu-button {
-    color: #0a0a3f;
-    background: linear-gradient(to right, #fde371, #d49d35);
+    color: #EEE;
+    /* background: linear-gradient(to right, #fde371, #d49d35); */
+    background-color: #CF0A0A;
     border-radius: 5px;
     padding: 8px 16px;
     border-style: none;
@@ -56,7 +58,7 @@
 }
 
 .header_menu-links {
-    background-color: #0a0a3f;
+    background-color: #000000;
     position: absolute;
     top: 15;
     right: 6%;

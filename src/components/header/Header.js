@@ -3,7 +3,7 @@ import "./header.css"
 import {Button, Menu, MenuItem} from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import GoldLogo2 from "../../assets/GoldLogo2.png"
+import NewLogo from "../../assets/NewLogo.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <div className='header'>
-       <a href='/'><img src={GoldLogo2} alt='Madha Agencies Logo' height="110px" width="200px" /></a>
+       <a href='/'><img src={NewLogo} alt='Madha Agencies Logo' height="auto" width="110px" /></a>
        <div className='header_nav'>
           <p className='header_nav-items'>Features</p>
           <a href='#features' style={{textDecoration: 'none'}}><p className='header_nav-items'>Top Sellers</p></a>
@@ -26,7 +26,7 @@ const Header = () => {
           <p>SHOP</p>
         </button>
         <div className='header_menu'>
-          {open ? <CloseIcon sx={{color: "#fde371"}} onClick={handleClick} /> :  <MenuIcon sx={{color: "#fde371"}} onClick={handleClick} />}
+          {open ? <CloseIcon sx={{color: "#CF0A0A"}} onClick={handleClick} /> :  <MenuIcon sx={{color: "#CF0A0A"}} onClick={handleClick} />}
             {open && 
               <div className='header_menu-links scale-up-center'>
                 <p className='header_nav-items'>Features</p>

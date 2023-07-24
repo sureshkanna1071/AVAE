@@ -1,15 +1,16 @@
 .heroBanner {
-    height: 700px;
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     overflow-y: hidden;
-    background:-moz-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
-    background:-webkit-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
-    background:-o-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
-    background:-ms-radial-gradient(circle at 0% 0%, #0A0A3F 25%, #A62787 100%);
-    background:radial-gradient(circle at 0% 0%, #0A0A3F 45%, #d49d35 100%); 
+    background-color: #000;
+    /* background:-moz-radial-gradient(circle at 0% 0%, #000000 25%, #A62787 100%);
+    background:-webkit-radial-gradient(circle at 0% 0%, #000000 25%, #A62787 100%);
+    background:-o-radial-gradient(circle at 0% 0%, #000000 25%, #A62787 100%);
+    background:-ms-radial-gradient(circle at 0% 0%, #000000 25%, #A62787 100%);
+    background:radial-gradient(circle at 0% 0%, #000000 45%, #d49d35 100%);  */
 }
 
 .heroBanner_content {
@@ -18,19 +19,26 @@
     justify-content: center;
     align-items: center;
     min-width: 370px;
-    width: 30%;
+    padding: 20px;
+    width: 40%;
 }
 
 .heroBanner_content-image {
      margin-top: 150px;
 }
 
+#lottie-tv {
+    height: 120vh;
+    width: 90%;
+}
+
 .heroBanner_content-title {
     font-size: 40px;
-    background: linear-gradient(to right, #fde371, #d49d35);
-    background-clip: text;
+    /* background: linear-gradient(to right, #fde371, #d49d35); */
+    color: #EEEEEE;
+    /* background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 
 .heroBanner_content-desc {
@@ -65,6 +73,10 @@
     .heroBanner_content-image {
         margin-top: 0;
         width: 90%;
+        height: auto;
+    }
+
+    #lottie-tv {
         height: auto;
     }
 }

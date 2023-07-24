@@ -7,7 +7,7 @@ const ProductCard = ({id, name, imageSrc, videoUrl}) => {
   return (
     <div className='card'>
       <div className='card-image'>
-        <img width="250px" src={imageSrc} alt='tv'  />
+        <img width="300px" src={imageSrc} alt='tv'  />
       </div>
       <hr width="90%" />
       <div className='card-details'>

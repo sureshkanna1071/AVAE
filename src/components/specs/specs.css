@@ -1,17 +1,15 @@
 .specs {
     height: 200px;
-    background-color: #fff;
+    background-color: #353535;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.specs h3 {
+.specs h2 {
     text-align: center;
     letter-spacing: 2px;
-    background: linear-gradient(to right, #ff3366, #3366ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #EEE;
+    margin: 10px;
 }

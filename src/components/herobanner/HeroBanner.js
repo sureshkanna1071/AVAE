@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import "./heroBanner.css"
 import { Button } from '@mui/material'
-import Pic10 from "../../assets/Pic10.png"
 import Lottie from "lottie-react";
 import AnimationTv from "../../assets/animation_lkfhr4ag.json"
 import Jump from 'react-reveal/Jump';
@@ -14,7 +13,7 @@ const HeroBanner = () => {
        {/* <div className='heroBanner_content'>
        </div> */}
        <div className='heroBanner_content'>
-        <Fade>
+        <Fade top>
           <h1 className='heroBanner_content-title'>Experience Visual & Audio Excellence with AVAE LED TVs.</h1>
         </Fade>
           

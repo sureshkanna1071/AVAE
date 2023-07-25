@@ -1,7 +1,6 @@
 import React from 'react'
 import "./productCard.css"
 import { Button } from '@mui/material'
-import Pic02 from "../../assets/Pic02.png"
 
 const ProductCard = ({id, name, imageSrc, videoUrl}) => {
   return (

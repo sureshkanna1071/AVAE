@@ -19,22 +19,24 @@ const HeroBanner = () => {
           
         {/* <p className='heroBanner_content-desc'>Welcome to AVAE, your gateway to extraordinary visual experiences! Immerse yourself in the pinnacle of technological brilliance with our stunning range of LED TVs. </p> */}
        <Jump>
-        <Button 
-          variant="contained" 
-          sx={{
-            color: '#EEE', 
-            background: "rgb(rgb(255, 250, 212), green, blue)",
-            fontWeight: '700',
-            letterSpacing: "2px",
-            marginTop: "30px"
-           }}
-        >
-          Explore
-        </Button>
+        <a href="#explore">
+          <Button 
+            variant="contained" 
+            sx={{
+              color: '#EEE', 
+              background: "rgb(rgb(255, 250, 212), green, blue)",
+              fontWeight: '700',
+              letterSpacing: "2px",
+              marginTop: "30px"
+            }}
+          >
+            Explore
+          </Button>
+        </a>
+          
        </Jump>
         
        </div>
-       
          <Lottie animationData={AnimationTv} onSuspendCapture={0.50} id="lottie-tv" />
        {/* <img className='heroBanner_content-image' src={Pic10} alt="Banner" width="850px" height="850px" /> */}
     </div>

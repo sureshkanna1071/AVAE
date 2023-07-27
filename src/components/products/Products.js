@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material'
 import { Fade } from 'react-reveal'
 import Slide from 'react-reveal/Slide';
 import Remote from "../../assets/Remote.png"
+import Remotee from "../../assets/Remotee.png"
 import Roll from 'react-reveal/Roll';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,8 +14,9 @@ const Products = () => {
     <>
       <div
         style={{
-          backgroundColor: '#000'
+          backgroundColor: '#e7e9eb'
         }}
+        id="explore"
       >
         <Fade left>
           <h2
@@ -43,7 +45,7 @@ const Products = () => {
             justifyContent: "space-around",
             flexWrap: "wrap",
             gap: "25px",
-            backgroundColor: "#000000",
+            backgroundColor: "#e7e9eb",
             padding: "100px 0"
          }}
         >   {index % 2 === 0 
@@ -55,12 +57,13 @@ const Products = () => {
                       src={Remote} 
                       alt={tv.name} 
                       style={{ 
-                        width: '150px', 
-                        height: 'auto',
+                        width: 'auto', 
+                        height: '150px',
                         position: "absolute",
                         rotate: "35deg",
                         bottom: "0",
-                        right: "10px"
+                        right: "10px",
+                        // backgroundColor: "#353535"
                       }} 
                     />
                     </Roll>
@@ -68,7 +71,24 @@ const Products = () => {
                   
                 </Fade>
             : <Fade right >
-                <img src={tv.imageSrc} alt={tv.name} style={{ width: '50%', height: 'auto' }} />
+                <div style={{width: "50%", height: 'auto', }}>
+                    <img src={tv.imageSrc} alt={tv.name} style={{ width: '100%', height: 'auto' }} />
+                    <Roll left>
+                      <img 
+                      src={Remotee} 
+                      alt={tv.name} 
+                      style={{ 
+                        width: 'auto', 
+                        height: '150px',
+                        position: "absolute",
+                        rotate: "-35deg",
+                        bottom: "0",
+                        left: "10px",
+                        // backgroundColor: "#353535"
+                      }} 
+                    />
+                    </Roll>
+                  </div>
               </Fade>
             }
             <div>
@@ -83,7 +103,7 @@ const Products = () => {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
               }}
-              onClick={() => navigate("/castor")}
+              onClick={() => navigate("/maintenance")}
               >
                 {tv.name}
             </h1>

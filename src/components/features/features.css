@@ -1,6 +1,6 @@
 #features {
-    background-color: #000000;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 20px;
 }
 
@@ -16,6 +16,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    grid-gap: 15px;
-    gap: 15px;
+    column-gap: 25px;
+    row-gap: 15px;
 }

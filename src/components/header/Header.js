@@ -4,9 +4,11 @@ import {Button, Menu, MenuItem} from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import NewLogo from "../../assets/NewLogo.png";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = (e) => {
     setOpen(!open);
@@ -22,6 +24,7 @@ const Header = () => {
        </div>
        <button 
            className='header_menu-button'
+           onClick={() => navigate("/maintenance")}
        >
           <p>SHOP</p>
         </button>

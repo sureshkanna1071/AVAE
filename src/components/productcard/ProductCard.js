@@ -1,10 +1,12 @@
 import React from 'react'
 import "./productCard.css"
-import { Button } from '@mui/material'
+import { Button, Paper } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({id, name, imageSrc, videoUrl}) => {
+  const navigate = useNavigate();
   return (
-    <div className='card'>
+    <div className='card' onClick={() => navigate("/maintenance")}>
       <div className='card-image'>
         <img width="300px" src={imageSrc} alt='tv'  />
       </div>

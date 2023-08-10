@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Castor from './components/Castor';
 import Maintenance from './components/Maintenance';
 import Aboutus from './components/pages/aboutus/Aboutus';
+import Upcoming from "./components/pages/upcoming/Upcoming"
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             <Footer />
           </>} 
         />
-        <Route path='/castor' element={<Castor />} />
+        <Route path='/projects' element={<Upcoming />} />
         <Route path='/maintenance' element={<Maintenance />} />
         <Route path='/aboutus' element={<Aboutus />} />
       </Routes>

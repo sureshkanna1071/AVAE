@@ -4,8 +4,8 @@
 
 .header {
     height: 90px;
-    background-color: #000;
-    color: whitesmoke;
+    background-color: #e7e9eb;
+    color: #000000;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -28,17 +28,23 @@
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    color: #EEEEEE;
+    color: #5a5a5a;
+    transition: transform 0.3s ease-in-out;
 }
 
 .header_menu-button {
     color: #EEE;
     /* background: linear-gradient(to right, #fde371, #d49d35); */
-    background-color: #CF0A0A;
+    background-color: royalblue;
     border-radius: 5px;
     padding: 8px 16px;
     border-style: none;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.header_menu-button:hover {
+    transform: scale(1.2);
 }
 
 .header_menu-button p {
@@ -47,8 +53,10 @@
     letter-spacing: 2px;
 }
 
-.header_nav-items:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.header_nav-items:hover  {
+    background-color: black;
+    color: #e7e9eb;
+    transform: scale(1.1);
 }
 
 .header_menu {

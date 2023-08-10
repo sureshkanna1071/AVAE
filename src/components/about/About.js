@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./about.css"
-import NewLogo from "../../assets/NewLogo.png";
+import NewLogo from "../../assets/NewBlackLogo.png";
 import { Button, IconButton, Modal } from '@mui/material';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import CloseIcon from '@mui/icons-material/Close';
@@ -156,7 +156,14 @@ const About = () => {
                 lineHeight: 2,
               }}
             >
-              At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
+              Madha Agencies, based in Tamil Nadu, serves as a distributor for their proprietary line of LED TVs, household appliances, and various other consumer electronics. The establishment, established in 2016 and helmed by Mr. George Wilson, has successfully orchestrated the distribution of its offerings through a network of dealers and distributors across Southern Tamil Nadu, Pondicherry, and Kerala.
+            </p>
+            <p
+              style={{
+                lineHeight: 2,
+              }}
+            >
+              At the core of our identity lie hallmarks such as an extensive product portfolio, premium brand collaborations, unwavering customer contentment, and competitive pricing. Our expertise encompasses a diverse array of home appliances and television models. Moreover, augmenting our repertoire, we proudly introduce our very own branded television – AVAE – a product that has not only been unveiled but has also secured official trademark recognition.
             </p>
           </div>
         </ParallaxLayer>
@@ -256,7 +263,8 @@ const About = () => {
                 lineHeight: 2,
               }}
             >
-              At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
+              Madha Agencies, based in Tamil Nadu, serves as a distributor for their proprietary line of LED TVs, household appliances, and various other consumer electronics. The establishment, established in 2016 and helmed by Mr. George Wilson, has successfully orchestrated the distribution of its offerings through a network of dealers and distributors across Southern Tamil Nadu, Pondicherry, and Kerala.
+              At the core of our identity lie hallmarks such as an extensive product portfolio, premium brand collaborations, unwavering customer contentment, and competitive pricing. Our expertise encompasses a diverse array of home appliances and television models. Moreover, augmenting our repertoire, we proudly introduce our very own branded television – AVAE – a product that has not only been unveiled but has also secured official trademark recognition.
             </p>
           </div>
         <div className='about_details-description about_parallax-tomato'>

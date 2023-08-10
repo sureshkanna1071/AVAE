@@ -13,7 +13,7 @@ const ProductCard = ({id, name, imageSrc, videoUrl}) => {
       <hr width="90%" />
       <div className='card-details'>
           <h4>{name}</h4>
-          <p> ₹50,000  </p>
+          <p>₹50,000</p>
       </div>
         
     </div>

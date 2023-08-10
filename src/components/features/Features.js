@@ -49,7 +49,7 @@ export const tvs = [
   },
   {
     id: 7,
-    name: 'SUPER NOVA WEB OS SERES',
+    name: 'SUPER NOVA WEB OS SERIES',
     imageSrc: Supernova,
     videoUrl: 'URL_OF_TV_1_YOUTUBE_VIDEO',
   },

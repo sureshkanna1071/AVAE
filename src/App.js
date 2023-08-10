@@ -9,6 +9,7 @@ import Products from './components/products/Products';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Castor from './components/Castor';
 import Maintenance from './components/Maintenance';
+import Aboutus from './components/pages/aboutus/Aboutus';
 
 function App() {
   return (
@@ -17,17 +18,19 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
-        <>
-          <Header />
-          <HeroBanner />
-          <Specs />
-          <Products />
-          <Features />
-          {/* <About /> */}
-          <Footer />
-        </>} />
+          <>
+            <Header />
+            <HeroBanner />
+            {/* <Specs /> */}
+            <Products />
+            <Features />
+            {/* <About /> */}
+            <Footer />
+          </>} 
+        />
         <Route path='/castor' element={<Castor />} />
         <Route path='/maintenance' element={<Maintenance />} />
+        <Route path='/aboutus' element={<Aboutus />} />
       </Routes>
     </BrowserRouter>
      

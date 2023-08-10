@@ -18,8 +18,7 @@ const Products = () => {
         }}
         id="explore"
       >
-        <Fade left>
-          <h2
+          <h1
             style={{
               textAlign: "center",
               padding: "50px 0 25px",
@@ -31,9 +30,7 @@ const Products = () => {
             }}
           >
             LED TVs Unleashed: Uncover the Ultimate Selection for Your Entertainment!
-          </h2>
-        </Fade>
-        
+          </h1>
       </div>
         
       {tvs.map((tv, index) => (

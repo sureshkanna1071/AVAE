@@ -16,30 +16,31 @@ const Header = () => {
 
   return (
     <div className='header'>
-       <a href='/'><img src={NewLogo} alt='Madha Agencies Logo' height="auto" width="110px" /></a>
+       <a href='/'><img src={NewLogo} alt='Madha Agencies Logo' height="auto" width="160px" /></a>
        <div className='header_nav'>
-          <p className='header_nav-items'>Features</p>
+          <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
+          <a href='#explore' style={{textDecoration: 'none'}}><p className='header_nav-items'>Features</p></a>
           <a href='#features' style={{textDecoration: 'none'}}><p className='header_nav-items'>Top Sellers</p></a>
-          <p className='header_nav-items'>About</p>
+          <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
        </div>
        <button 
            className='header_menu-button'
            onClick={() => navigate("/maintenance")}
        >
-          <p>SHOP</p>
+         <p>SHOP</p>
         </button>
         <div className='header_menu'>
           {open ? <CloseIcon sx={{color: "#CF0A0A"}} onClick={handleClick} /> :  <MenuIcon sx={{color: "#CF0A0A"}} onClick={handleClick} />}
             {open && 
               <div className='header_menu-links scale-up-center'>
-                <p className='header_nav-items'>Features</p>
+                <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
+                <a href='#explore' style={{textDecoration: 'none'}}><p className='header_nav-items'>Features</p></a>
                 <a href='#features' style={{textDecoration: 'none'}}><p className='header_nav-items'>Top Sellers</p></a>
-                <p className='header_nav-items'>About</p>
+                <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
               </div>
             }
         </div>
-        
-          
+
         {/* <Menu
           open={open}
           anchorEl={anchor}

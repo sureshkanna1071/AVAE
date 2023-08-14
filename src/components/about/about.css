@@ -11,6 +11,7 @@
     text-align: justify;
     letter-spacing: 2px;
     padding: 20px;
+    z-index: 1;
 }
 
 .about_container {
@@ -22,7 +23,7 @@
     align-items: center;
     margin: 0 auto;
     gap: 25px;
-    background: linear-gradient(to bottom, #b0d4e7, #87ceeb);
+    /* background: linear-gradient(to bottom, #b0d4e7, #87ceeb); */
     color: #001f3f;
     border-radius: 10px;
 }

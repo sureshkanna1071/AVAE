@@ -29,7 +29,7 @@ function App() {
             <Footer />
           </>} 
         />
-        <Route path='/projects' element={<Upcoming />} />
+        <Route path='/products' element={<Upcoming />} />
         <Route path='/maintenance' element={<Maintenance />} />
         <Route path='/aboutus' element={<Aboutus />} />
       </Routes>

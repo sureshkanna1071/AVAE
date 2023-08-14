@@ -19,8 +19,7 @@ const Header = () => {
        <a href='/'><img src={NewLogo} alt='Madha Agencies Logo' height="auto" width="160px" /></a>
        <div className='header_nav'>
           <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
-          <a href='#explore' style={{textDecoration: 'none'}}><p className='header_nav-items'>Top Sellers</p></a>
-          <a href='/projects' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Projects</p></a>
+          <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
           <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
        </div>
        <button 
@@ -34,8 +33,7 @@ const Header = () => {
             {open && 
               <div className='header_menu-links scale-up-center'>
                 <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
-                <a href='#explore' style={{textDecoration: 'none'}}><p className='header_nav-items'>Features</p></a>
-                <a href='/projects' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Projects</p></a>
+                <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
                 <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
               </div>
             }

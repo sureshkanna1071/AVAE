@@ -10,6 +10,7 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Pattern from "../../assets/Pattern.jpg"
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import zIndex from '@mui/material/styles/zIndex';
 
 const About = () => {
   const [openVideo, setOpenVideo] = useState(false);
@@ -92,13 +93,15 @@ const About = () => {
         <div
           className='about_container'
         >
-        <h1 className='about_title'>Discover Our Story: Unveiling the Heart and Soul Behind AVAE</h1>
+          <img src={Pattern} alt="Pattern" height="auto" width="90%" style={{position: "absolute", borderRadius: '20px'}} />
+          <h1 className='about_title' >Discover Our Story: Unveiling the Heart and Soul Behind AVAE</h1>
         <p
           style={{
             lineHeight: 2,
             textAlign: "justify",
             width: "60%",
-            margin: "10px auto"
+            margin: "10px auto",
+            zIndex: 1
           }}
         >
           At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
@@ -113,7 +116,13 @@ const About = () => {
         >
           <h4>Watch Video</h4>
         </Button>
-        <p >Scroll down</p>
+        <p 
+         style={{
+          zIndex: 1
+         }} 
+        >
+          Scroll down
+        </p>
         <KeyboardDoubleArrowDownIcon className='scroll-icon' sx={{color: "#001f3f"}} />
       </div>
         </ParallaxLayer>

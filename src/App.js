@@ -7,33 +7,41 @@ import Specs from './components/specs/Specs';
 import About from './components/about/About';
 import Products from './components/products/Products';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Castor from './components/Castor';
 import Maintenance from './components/Maintenance';
 import Aboutus from './components/pages/aboutus/Aboutus';
 import Upcoming from "./components/pages/upcoming/Upcoming"
+import Categories from './components/pages/categories/Categories';
+import { Details } from '@mui/icons-material';
+import DetailsPage from './components/pages/detailspage/DetailsPage';
+import CartContextProvider from './components/contexts/CartContextProvider';
 
 function App() {
   return (
 
    <>
+   <CartContextProvider>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={
-          <>
-            <Header />
-            <HeroBanner />
-            {/* <Specs /> */}
-            <Products />
-            <Features />
-            {/* <About /> */}
-            <Footer />
-          </>} 
-        />
-        <Route path='/products' element={<Upcoming />} />
-        <Route path='/maintenance' element={<Maintenance />} />
-        <Route path='/aboutus' element={<Aboutus />} />
+          <Route path='/' element={
+            <>
+              <Header />
+              <HeroBanner />
+              {/* <Specs /> */}
+              <Products />
+              <Features />
+              {/* <About /> */}
+              <Footer />
+            </>} 
+          />
+          <Route path='/products' element={<Upcoming />} />
+          <Route path='/maintenance' element={<Maintenance />} />
+          <Route path='/aboutus' element={<Aboutus />} />
+          <Route path='/shop' element={<Categories />} />
+          <Route path="/castor" element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>
+   </CartContextProvider>
+    
      
    </>
   );

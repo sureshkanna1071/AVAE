@@ -12,16 +12,20 @@ const Castor = () => {
   const navigate = useNavigate();
   return (
     <div>
-        <div style={{height: "90vh", width: "90vw", margin: "20px auto", display: "flex", justifyContent: "center", alignItems: "center"}}>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/-Q5gWq4LeUM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div 
+          style={{
+            height: "90vh", 
+          }}
+        > 
+          <div>
+            
+          </div>
+          <h1 style={{textAlign: 'center'}}>Castor Series</h1>
         </div>
-        
-        <h1 style={{textAlign: 'center'}}>Castor Series</h1>
-        {/* <video></video> */}
         <div
           style={{
             display: "flex",
-            flexDirection: 'row',
+            flexDirection: 'column',
             justifyContent: "center",
             flexWrap: 'wrap',
             alignItems: "center",

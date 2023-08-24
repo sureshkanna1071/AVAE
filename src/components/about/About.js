@@ -3,14 +3,12 @@ import "./about.css"
 import NewLogo from "../../assets/NewBlackLogo.png";
 import { Button, IconButton, Modal } from '@mui/material';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
-import CloseIcon from '@mui/icons-material/Close';
-import AboutVideo from "../../assets/AboutVideo.mp4"
 import HikingIcon from '@mui/icons-material/Hiking';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Pattern from "../../assets/Pattern.jpg"
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import zIndex from '@mui/material/styles/zIndex';
+import VideoModal from '../VideoModal';
 
 const About = () => {
   const [openVideo, setOpenVideo] = useState(false);
@@ -85,7 +83,7 @@ const About = () => {
         pages={4}
         style={{
           backgroundColor: "whitesmoke",
-          color: "001f3f",
+          color: "white",
           paddingBottom: "50px"
         }}
       >
@@ -155,7 +153,7 @@ const About = () => {
                   height: "5px",
                   borderStyle: 'none',
                   border: "none",
-                  backgroundColor: "#20232f",
+                  backgroundColor: "white",
                 }} 
               />
             </div>
@@ -178,7 +176,7 @@ const About = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.5} speed={0.01} style={{ display: "flex", alignItems: "center", justifyContent: 'flex-end', padding: "25px"  }}>
-        <div className='about_details-description about_parallax-tomato'>
+        <div className='about_details-description about_parallax-pink'>
             <div>
               <h2
                 style={{
@@ -198,17 +196,23 @@ const About = () => {
                   height: "5px",
                   borderStyle: 'none',
                   border: "none",
-                  backgroundColor: "#20232f"
+                  backgroundColor: "white"
                 }} 
               />
             </div>
-            
             <p
               style={{
                 lineHeight: 2,
               }}
             >
-              At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
+              Our foremost focus lies in cultivating a corporate culture that fosters efficient strategy implementation, ensures customer contentment, and delivers exceptional service. Our aim is to foster a brand identity and boost sales by harnessing the power of cutting-edge technologies.
+            </p>
+            <p
+              style={{
+                lineHeight: 2,
+              }}
+            >
+              At the heart of our mission is the drive to innovate. We leverage state-of-the-art technologies to propel our brand to new heights, fostering engagement and resonance in an ever-evolving marketplace. This approach not only empowers us to stay ahead of the curve but also to create unique experiences that resonate with our clientele.
             </p>
           </div>
         </ParallaxLayer>
@@ -256,13 +260,12 @@ const About = () => {
                 <HikingIcon fontSize='large' />Our Story
               </h2>
               <hr 
-                // className='about_parallax-tomato'
                 style={{
                   width: "70%",
                   height: "5px",
                   borderStyle: 'none',
                   border: "none",
-                  backgroundColor: "#20232f",
+                  backgroundColor: "white",
                 }} 
               />
             </div>
@@ -369,47 +372,7 @@ const About = () => {
             </Button>
           </div>
         </div> */}
-        <Modal
-         open={openVideo}
-         onClose={() => {
-          setOpenVideo(false)
-        }}
-        >
-          <div
-           style={{
-              height: "100%",
-              width: '100%',
-           }}
-          >
-           <div
-            style={{
-              textAlign: "end",
-              backgroundColor: 'black'
-            }}
-           >
-            <IconButton 
-              sx={{backgroundColor: "whitesmoke", border: "1px solid #5a5a5a", "&:hover": {backgroundColor: "whitesmoke",}}}
-              onClick={() => {
-                setOpenVideo(false)
-              }}
-            >
-              <CloseIcon fontSize='small' />
-            </IconButton>
-           </div>
-           <div
-            style={{
-              height: "95%",
-              width: '100%',
-              textAlign: "center",
-              backgroundColor: 'black'
-            }}
-           >
-            <video width="100%" height="100%" autoPlay controls>
-              <source src={AboutVideo} type="video/mp4" />
-            </video>
-           </div>
-          </div>
-        </Modal>
+        <VideoModal openVideo={openVideo} setOpenVideo={setOpenVideo} />
     </>
   )
 }

@@ -4,9 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import Banner01 from "../../assets/Banner01.png"
-import Banner2 from "../../assets/Banner2.jpg"
-import Banner3 from "../../assets/Banner3.jpg"
-import Banner4 from "../../assets/Banner4.jpg"
+import Banner2 from "../../assets/Banner02.png"
+import Banner3 from "../../assets/Banner03.png"
+import Banner4 from "../../assets/Banner04.png"
 import Banner5 from "../../assets/Banner5.jpg"
 import Banner6 from "../../assets/Banner6.jpg"
 import Banner7 from "../../assets/Banner7.jpg"
@@ -96,7 +96,7 @@ const HeroBanner = () => {
         <div>
           <img src={Banner4} alt="banner" className='heroBanner-images' />
         </div>
-        <div>
+        {/* <div>
           <img src={Banner5} alt="banner" className='heroBanner-images' />
         </div>
         <div>
@@ -104,7 +104,7 @@ const HeroBanner = () => {
         </div>
         <div>
           <img src={Banner7} alt="banner" className='heroBanner-images' />
-        </div>
+        </div> */}
       </Slider>
        {/* <img className='' src={NewOne} alt="Banner" width="100%" height="100%" /> */}
     </div>

@@ -3,13 +3,13 @@ import "./categories.css"
 import Header from '../../header/Header'
 import Footer from '../../footer/Footer'
 import { tvs } from '../../features/Features'
-import ProductCard from '../../productcard/ProductCard'
 import { Button, Paper } from '@mui/material'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 import { useState } from 'react'
 import VideoModal from '../../VideoModal'
+import ShowCard from '../../showcard/ShowCard'
 
 const Categories = () => {
   const [openVideo, setOpenVideo] = useState(false);
@@ -21,7 +21,7 @@ const Categories = () => {
         <div className='shop_categories-tvs'>
           <h3 className='shop_categories-title'>LED TVS</h3>
           <div className='shop_categories-list'>
-            {tvs.map((tv) => <ProductCard {...tv} />)}
+            {tvs.map((tv) => <ShowCard {...tv} />)}
           </div>
           
         </div>

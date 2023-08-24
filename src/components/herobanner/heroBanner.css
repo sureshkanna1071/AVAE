@@ -4,7 +4,8 @@
 }
 
 .heroBanner-images {
-    /* min-height: calc(100vh - 130px); */
+    height: auto;
+    min-height: calc(100vh - 90px);
     width: 100%;
 }
 

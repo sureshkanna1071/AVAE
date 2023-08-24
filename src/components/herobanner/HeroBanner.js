@@ -3,7 +3,7 @@ import "./heroBanner.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import Banner1 from "../../assets/Banner1.jpg"
+import Banner01 from "../../assets/Banner01.png"
 import Banner2 from "../../assets/Banner2.jpg"
 import Banner3 from "../../assets/Banner3.jpg"
 import Banner4 from "../../assets/Banner4.jpg"
@@ -85,7 +85,7 @@ const HeroBanner = () => {
             </Carousel> */}
        <Slider {...settings}>
         <div>
-          <img src={Banner1} alt="banner" className='heroBanner-images' />
+          <img src={Banner01} alt="banner" className='heroBanner-images' />
         </div>
         <div>
           <img src={Banner2} alt="banner" className='heroBanner-images' />

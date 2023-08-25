@@ -10,6 +10,7 @@ import Banner4 from "../../assets/Banner04.png"
 import Banner5 from "../../assets/Banner5.jpg"
 import Banner6 from "../../assets/Banner6.jpg"
 import Banner7 from "../../assets/Banner7.jpg"
+import Banner8 from "../../assets/Banner8.jpg"
 
 const HeroBanner = () => {
 
@@ -96,7 +97,7 @@ const HeroBanner = () => {
         <div>
           <img src={Banner4} alt="banner" className='heroBanner-images' />
         </div>
-        {/* <div>
+        <div>
           <img src={Banner5} alt="banner" className='heroBanner-images' />
         </div>
         <div>
@@ -104,7 +105,10 @@ const HeroBanner = () => {
         </div>
         <div>
           <img src={Banner7} alt="banner" className='heroBanner-images' />
-        </div> */}
+        </div>
+        <div>
+          <img src={Banner8} alt="banner" className='heroBanner-images' />
+        </div>
       </Slider>
        {/* <img className='' src={NewOne} alt="Banner" width="100%" height="100%" /> */}
     </div>

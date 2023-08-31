@@ -14,7 +14,14 @@ const Footer = () => {
         <a href='mailto:matha.agenc@gmail.com'><EmailIcon sx={{color: "white", fontSize: "30px", "&:hover": {color: "#cf0a0a"}, margin: "0 10px"}} /></a>
         <a href='tel:8098845333' target='_blank'><LocalPhoneIcon sx={{color: "white", "&:hover": {color: "#cf0a0a"}, fontSize: "30px", margin: "0 10px"}} /></a>
       </div>
-      <p>All Rights Reserved 2023</p>
+      <p>ALL Rights Reserved 2023</p>
+      <div className='footer_links'>
+        <a href='/shipping'>SHIPPING POLICY </a>
+        <hr />
+        <a href='/terms'>TERMS & CONDITION </a>
+        <hr />
+        <a href='/refund'>REFUND POLICY </a>
+      </div>
     </div>
   )
 }

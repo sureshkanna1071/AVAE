@@ -1,0 +1,22 @@
+.privacy {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    align-items: center;
+    gap: 25px;
+    background-color: #F5F5F5;
+    color: #333333;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.privacy_details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+}
+
+.privacy_details ul {
+    margin-left: 15px;
+}

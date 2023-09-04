@@ -14,6 +14,12 @@ import Categories from './components/pages/categories/Categories';
 import { Details } from '@mui/icons-material';
 import DetailsPage from './components/pages/detailspage/DetailsPage';
 import CartContextProvider from './components/contexts/CartContextProvider';
+import Terms from './components/terms/Terms';
+import Shipping from './components/shippingPolicy/Shipping';
+import Refund from './components/refundPolicy/Refund';
+import Dealers from './components/dealersAndDistributers/Dealers';
+import Order from './components/order/Order';
+import Privacy from './components/privacy/Privacy';
 
 function App() {
   return (
@@ -38,11 +44,15 @@ function App() {
           <Route path='/aboutus' element={<Aboutus />} />
           <Route path='/shop' element={<Categories />} />
           <Route path="/castor" element={<DetailsPage />} />
+          <Route path='/terms' element={<Terms />} />
+          <Route path='/shipping' element={<Shipping />} />
+          <Route path='/refund' element={<Refund />} />
+          <Route path='/dealers' element={<Dealers />} />
+          <Route path="/privacy" element={<Privacy />} />
+          {/* <Route path="/order" element={<Order />} /> */}
       </Routes>
     </BrowserRouter>
    </CartContextProvider>
-    
-     
    </>
   );
 }

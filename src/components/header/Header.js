@@ -19,6 +19,11 @@ const Header = () => {
     setOpen(!open);
   }
 
+  const handleCheckout = () => {
+    navigate("/order");
+    setOpenCart(false);
+  }
+
   console.log(cartItems)
 
   return (
@@ -28,6 +33,7 @@ const Header = () => {
           <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
           <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
           <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
+          <p onClick={() => navigate("/contact")} className='header_nav-items'>Contact Us</p>
        </div>
        <button 
            className='header_menu-button'
@@ -43,6 +49,7 @@ const Header = () => {
                 <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
                 <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
                 <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
+                <p onClick={() => navigate("/contact")} className='header_nav-items'>Contact Us</p>
               </div>
             }
         </div>
@@ -67,9 +74,9 @@ const Header = () => {
                 {cartItems 
                   ? <>
                       <img src={cartItems.image} alt="" height="75px" width="75px" />
-                      <p style={{width: "90%"}}>{cartItems.name}</p>
+                      <p style={{width: "60%"}}>{cartItems.name}</p>
                       <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}} >
-                        <p>{cartItems.price}</p>
+                        <p>₹ {cartItems.price}</p>
                         <Button onClick={() => setCartItems(null)} size='small' variant='outlined' color="error">Remove</Button>
                       </div>
                     </>
@@ -78,7 +85,7 @@ const Header = () => {
             </div>
             <hr />
             <div className='cart_checkout'>
-              <Button disabled={!cartItems} sx={{backgroundColor: "black", color: "white", "&:hover": {backgroundColor: "black", color: "white",}}} fullWidth variant="contained">CHECKOUT</Button>
+              <Button onClick={handleCheckout} disabled={!cartItems} sx={{backgroundColor: "black", color: "white", "&:hover": {backgroundColor: "black", color: "white",}}} fullWidth variant="contained">CHECKOUT</Button>
             </div>
           </div>
         </Modal>

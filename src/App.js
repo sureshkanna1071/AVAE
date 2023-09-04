@@ -17,8 +17,8 @@ import CartContextProvider from './components/contexts/CartContextProvider';
 import Terms from './components/terms/Terms';
 import Shipping from './components/shippingPolicy/Shipping';
 import Refund from './components/refundPolicy/Refund';
-import Dealers from './components/dealersAndDistributers/Dealers';
-import Order from './components/order/Order';
+// import Dealers from './components/dealersAndDistributers/Dealers';
+// import Order from './components/order/Order';
 import Privacy from './components/privacy/Privacy';
 
 function App() {

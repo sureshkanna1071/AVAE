@@ -21,6 +21,8 @@ const Footer = () => {
         <a href='/terms'>TERMS & CONDITION </a>
         <hr />
         <a href='/refund'>REFUND POLICY </a>
+        <hr />
+        <a href='/privacy'>PRIVACY POLICY </a>
       </div>
     </div>
   )

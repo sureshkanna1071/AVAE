@@ -17,7 +17,7 @@ const ContactUs = () => {
             <Box className='contactus-address'>
             <Typography variant="h6">Contact Information:</Typography>
             <Typography>
-                Address: No.1, Dolphin complex, Aathumedu, Vedasandur.
+                Address: No.1, Dolphin complex,<br /> Aathumedu,<br /> Vedasandur,<br /> Dindigul - 624710.
             </Typography>
             <Typography>
                 Phone: 8098845333

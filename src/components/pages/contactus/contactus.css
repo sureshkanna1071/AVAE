@@ -9,6 +9,9 @@
 
 .contactus-address {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 @media screen and (max-width: 950px) {

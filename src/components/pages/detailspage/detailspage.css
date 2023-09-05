@@ -132,7 +132,7 @@
 }
 
 .details_content-buy {
-    padding: 25px 50px;
+    padding: 25px;
 }
 
 .details_content-shipdetails {
@@ -166,7 +166,7 @@
 
     .details_imgcontainer {
         width: 100%;
-        min-height: 600px;
+        min-height: 650px;
     }
 
     .details_content {
@@ -182,20 +182,31 @@
     }
 
     .details_imgcontainer-large {
-        min-height: 65vh;
+        min-height: 400px;
     }
 
     .details_imgcontainer-large img {
         max-width: 90%;
-        max-height: 60vh;
+        max-height: 200px;
     }
 
     .details_imgcontainer-small {
         position: static;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .details_imgcontainer-icons {
-        right: 25%;
+        right: auto;
+    }
+
+    .details_detailedinfo p {
+        min-width: 90vw;
+    }
+
+    .details_content-sizes {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
     }
 }

@@ -18,7 +18,7 @@ import Terms from './components/terms/Terms';
 import Shipping from './components/shippingPolicy/Shipping';
 import Refund from './components/refundPolicy/Refund';
 // import Dealers from './components/dealersAndDistributers/Dealers';
-// import Order from './components/order/Order';
+import Order from './components/order/Order';
 import Privacy from './components/privacy/Privacy';
 import ContactUs from './components/pages/contactus/ContactUs';
 
@@ -50,7 +50,7 @@ function App() {
           <Route path='/refund' element={<Refund />} />
           <Route path='/contact' element={<ContactUs />} />
           <Route path="/privacy" element={<Privacy />} />
-          {/* <Route path="/order" element={<Order />} /> */}
+          <Route path="/order" element={<Order />} />
       </Routes>
     </BrowserRouter>
    </CartContextProvider>

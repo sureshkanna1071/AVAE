@@ -44,18 +44,28 @@ const Terms = () => {
             
             <h4>10. Product Images Disclaimer:</h4>
             <p>
-              We strive to provide accurate representations of our products through images on our website. However, please note that in some cases, the images provided may not be the exact images of the product but are intended to closely resemble the product in question. These images are for illustrative purposes and are meant to give you a general idea of the product's appearance.
+              At AVAE, we strive to provide accurate representations of our products through images on our website. However, please understand that the fast-paced nature of the technology market can lead to variations in the parts, software, and hardware of products from year to year. As a result, the product images displayed on our website may not always precisely match the specific appearance of the product you receive.
             </p>
 
-            <h4>11. Variations and Deviations:</h4>
+            <h4>11. Illustrative Purposes:</h4>
             <p>
-              Product images on our website may occasionally differ slightly from the actual product you receive. Factors such as screen settings, lighting, and manufacturing variations can contribute to differences between the image and the product. We do our best to ensure that the product descriptions and specifications are accurate, even if the images may not be a perfect representation.
+              The images presented on our website are intended for illustrative purposes to give you a general idea of the product's design and features. These images are based on the best available information at the time of listing. While we make every effort to keep our product listings up to date, the dynamic nature of the tech industry may result in differences between the image and the actual product.
             </p>
 
-            <h4>12. Modifications and Updates:</h4>
+            <h4>12. Product Consistency:</h4>
+            <p>
+              Rest assured, we prioritize providing accurate product descriptions and specifications, even if the images may not reflect the exact product you receive. Our commitment remains unwavering in delivering high-quality products that meet or exceed your expectations, regardless of minor variations in appearance or components.
+            </p>
+
+            <p>
+              We appreciate your understanding of these industry dynamics and assure you that our dedication to product quality and customer satisfaction remains unchanged.
+            </p>
+
+
+            <h4>13. Modifications and Updates:</h4>
             <p>The Company reserves the right to modify, update, or revise these terms and conditions at any time without prior notice. It is your responsibility to review these terms periodically.</p>
 
-            <h4>13. Contact Information:</h4>
+            <h4>14. Contact Information:</h4>
             <p>For inquiries or concerns regarding these terms and conditions, please contact our customer support team at <a href='mailto:matha.agenc@gmail.com'>matha.agenc@gmail.com</a> or call us at <a href="tel:8098845333">918098845333</a>.</p>
 
             <p>By using our website and services, you acknowledge that you have read, understood, and agreed to these terms and conditions.</p>

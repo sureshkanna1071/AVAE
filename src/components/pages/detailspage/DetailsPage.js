@@ -10,7 +10,7 @@ import Cast from '../../../assets/Cast.png';
 import Dolby from '../../../assets/Dolby.png';
 import Andriod from '../../../assets/Android.png';
 import "./detailspage.css"
-import { Button, Chip } from '@mui/material';
+import { Button, Chip, Snackbar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../header/Header';
 import ShopIcon from '@mui/icons-material/Shop';
@@ -24,6 +24,12 @@ const DetailsPage = () => {
   const sizes = ["30\"", "40\"","50\"","60\"","70\""];
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
   const {cartItems, setCartItems} = useContext(CartContext);
+
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
 
   return (
     <>
@@ -41,16 +47,16 @@ const DetailsPage = () => {
               <img src={imageSrc} />
             </div>
             <div className='details_imgcontainer-icons'>
-              <img src={Hdmi} alt='' />
-              <img src={Cast} alt='' />
-              <img src={Andriod} alt='' />
-              <img src={Dolby} alt='' />
+              <img src={Hdmi} alt='Hdmi' />
+              <img src={Cast} alt='Cast' />
+              <img src={Andriod} alt='Andriod' />
+              <img src={Dolby} alt='Dolby' />
             </div>
           </div>
           <div className='details_content'>
             <div className='details_content-name'>
               <p>Castor Series LED TV</p>
-              <p>₹ 55000.0</p>
+              <p>₹ 55000</p>
             </div>
             <hr />
             <div className='details_content-sizeinfo'>
@@ -90,7 +96,7 @@ const DetailsPage = () => {
                   <strong>Connectivity:</strong> HDMI, USB
                 </p>
                 <p>
-                  <strong>Includes:</strong> LED TV Remote
+                  <strong>Accessories:</strong> Remote, Stand, User manual
                 </p>
               {/* </ul> */}
             </div>
@@ -102,15 +108,18 @@ const DetailsPage = () => {
                 sx={{
                   backgroundColor: 'black',
                   color: 'white',
+                  borderRadius: 0,
                   "&:hover": {
                     backgroundColor: 'black',
                     color: 'white',
                   }
                 }}
                 onClick={() => {
+                  setOpenSnackbar(true);
                   setCartItems({
                     name: "Castor LED TV",
-                    price: "55000.0",
+                    price: "55,000",
+                    description: "The Castor Full HD LED TV offers vibrant visuals and clear picture quality in a compact size. With its Full HD resolution, you can enjoy crisp images and realistic colors. ",
                     count: 1,
                     image: Cas01,
                   });
@@ -122,7 +131,7 @@ const DetailsPage = () => {
             <hr />
             <div className='details_content-shipdetails'>
               <p>Shipping to the Tamil Nadu, Kerela & Pondicherry only.</p>
-              <p>Delivery time: 10-15 days</p>
+              <p>Delivery time: 5-10 days</p>
             </div>
           </div>
         </div>
@@ -161,6 +170,13 @@ const DetailsPage = () => {
           <p>Audio Output: 10W + 10W</p>
         </div>
       <Footer />
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        message="Item Added To Cart!"
+      />
     </>
   )
 }

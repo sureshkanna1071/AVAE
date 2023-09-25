@@ -1,5 +1,5 @@
 import { TextField, Select, MenuItem, FormControl,InputLabel,FormHelperText, Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { CartContext } from '../contexts/CartContextProvider';
 import { useContext } from 'react';
@@ -8,8 +8,8 @@ import "./order.css"
 import "../header/header.css"
 import { useNavigate } from 'react-router-dom';
 import { FaCreditCard } from 'react-icons/fa';
-import { SiPhonepe } from 'react-icons/si';
 import { BsBank2, BsQrCodeScan } from 'react-icons/bs';
+import Cookies from 'js-cookie';
 
 const Order = () => {
   const [order, setOrder] = useState(null);
@@ -23,39 +23,45 @@ const Order = () => {
   const [state, setState] = useState('');
   const [city, setCity] = useState('');
   const [postalCode, setPostalCode] = useState('');
-
+  let userData = {
+        firstName,
+        lastName,
+        phoneNumber,
+        email,
+        deliveryAddress,
+        city,
+        postalCode,
+        state,
+      };
   const states = ['Tamil Nadu', 'Kerala', 'Puducherry'];
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // You can perform form validation and submission logic here
-    // console.log({
-    //   firstName,
-    //   lastName,
-    //   phoneNumber,
-    //   email,
-    //   deliveryAddress,
-    //   city,
-    //   postalCode,
-    //   state,
-    // });
-  };
+  useEffect(() => {
+    if(!cartItems) {
+      navigate(-1);
+    } 
+  }, []);
 
-  const createOrder = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
     try {
-      const response = await axios.post('http://localhost:3699/orders', {
-        amount: 5500000, // Amount in paise
+      const response = await axios.post('https://avaeserver.onrender.com/orders', {
+        amount: cartItems.amount || 400000,
         receipt: 'order_rcptid_' + Date.now(),
+        product_data: cartItems,
+        user_data: userData
       });
-      setOrder(response.data);
+      if(response.status === 200) {
+        handlePayment(response.data);
+      }
+      
     } catch (error) {
       console.error('Error creating order:', error);
       // Handle error display or user notification
     }
-    // console.log(process.env)
   };
 
-  const handlePayment = () => {
+  const handlePayment = (order) => {
     if (!order) {
       // Handle scenario where order is not created yet
       return;
@@ -63,18 +69,38 @@ const Order = () => {
 
     // Proceed with payment handling using Razorpay SDK
     const options = {
-      key: 'rzp_test_FWwwyJGZZrxz0V',
+      key: process.env.REACT_APP_RAZORPAY_API_KEY,
       amount: order.amount, // Amount in paise
       currency: 'INR',
       name: 'AVAE',
       description: 'Test Payment',
       order_id: order.id,
       handler: function (response) {
-        alert('Payment successful: ' + response.razorpay_payment_id);
-        // Handle post-payment actions if needed
+        let previousOrders = Cookies.get('orders') ? JSON.parse(Cookies.get('orders')) : [];
+        Cookies.set('orders', JSON.stringify([...previousOrders, {
+          series: cartItems.series,
+          title: cartItems.title,
+          description: cartItems.description,
+          price: cartItems.price,
+          image_urls: [cartItems.image_urls[0]]
+        }]), {expires: 15})
+        axios.post('https://avaeserver.onrender.com/order', {
+                  ...response, 
+                  ...order, 
+                  ...userData, 
+                  title: cartItems.title, 
+                  price: cartItems.price, 
+                  size: cartItems.size
+                })
+             .then((res) => {
+             })
+             .catch((err) => {
+              console.log(err);
+             });
+        setCartItems(null);
+        navigate("/thankyou");
       },
     };
-
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
   };
@@ -83,35 +109,35 @@ const Order = () => {
     <>
         <div>
           <div className='order_header'>
-            <p onClick={() => navigate(-1)} style={{display: "flex", alignItems: 'center', gap: '5px'}}><ArrowBackIcon /> continue shopping</p>
+            <p onClick={() => navigate(-1)} style={{display: "flex", alignItems: 'center', gap: '5px', zIndex: 2}}><ArrowBackIcon /> <span>continue shopping</span></p>
             <h3>CHECKOUT</h3>
           </div>
           <div className='order_details'>
             <div className='order_summary'>
                 <h3>Order Summary</h3>
                 <hr style={{height: "1px", backgroundColor: "#f5f5f5"}} />
-                <div className='cart_items' >
-                    <div className='cart_items-box' style={{padding: "25px 0"}}>
+                <div style={{height: 'auto'}} className='cart_items' >
+                    <div className='order_items-box' style={{padding: "25px 0"}}>
                       {cartItems 
                         ? <>
-                            <img src={cartItems.image} alt="" height="75px" width="75px" />
+                            <img src={cartItems.image_urls[0]} alt=""  />
                             <div style={{width: "80%", display: "flex", flexDirection: "column", gap: "10px"}}>
-                              <h4>{cartItems.name}</h4> 
-                              <p style={{fontSize: 'small'}}>{cartItems.description}</p>
+                              <h4>{cartItems?.title}</h4> 
+                              <p style={{fontSize: 'small'}}>{cartItems?.description}</p>
                             </div>
                             
                             <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", minWidth: "75px"}} >
-                              <p style={{textAlign: 'end'}}>₹ {cartItems.price}</p>
+                              <p style={{textAlign: 'end'}}>₹ {cartItems?.price}</p>
                             </div>
                           </>
                         : <p className='cart_items-empty'>Your cart is empty.</p>}
                     </div>
                     <hr style={{height: "1px", backgroundColor: "#f5f5f5"}} />
                     <div className='cart_summary'>
-                      <div className='cart_summary-price'><p>Item Price: </p> <p>₹ {cartItems.price}</p></div>
+                      <div className='cart_summary-price'><p>Item Price: </p> <p>₹ {cartItems?.price}</p></div>
                       <div className='cart_summary-price'><p>Delivery Charge: </p> <p style={{color: 'green'}}>-₹ 0</p></div>
                       <div className='cart_summary-price'><p>Taxes: </p> <p style={{color: 'green'}}>-₹ 0</p></div>
-                      <div className='cart_summary-price'><strong>Total Amount: </strong> <strong>₹ {cartItems.price}</strong></div>
+                      <div className='cart_summary-price'><strong>Total Amount: </strong> <strong>₹ {cartItems?.price}</strong></div>
                     </div>
                     <hr style={{height: "1px", backgroundColor: "#f5f5f5"}} />
                 </div>
@@ -119,11 +145,11 @@ const Order = () => {
                 <div className='order_payments'>
                   <div className='order_option'>
                     <FaCreditCard className='order_option-icons' />
-                    <p>Card</p>
+                    <p>Cards</p>
                   </div>
                   <div className='order_option'>
                     <BsQrCodeScan className='order_option-icons' /> 
-                    <p>UPI / QR</p>
+                    <p>UPI / QR </p>
                   </div>
                   <div className='order_option'>
                     <BsBank2 className='order_option-icons' />
@@ -211,7 +237,7 @@ const Order = () => {
                   <FormHelperText sx={{color: "red"}}>Do not proceed with the order if your current state is not among the following: Tamil Nadu, Kerala, or Puducherry.</FormHelperText>
                 </FormControl>
                 <hr style={{height: "1px", width: "100%", backgroundColor: "#5a5a5a"}} />
-                <Button sx={{backgroundColor: "darkblue", color: "aliceblue", "&:hover": {backgroundColor: "darkblue", color: "aliceblue",}}} disabled={!cartItems} fullWidth variant="contained" color="primary" type="submit">
+                <Button sx={{backgroundColor: "#0046bf", color: "aliceblue", "&:hover": {backgroundColor: "#0046bf", color: "aliceblue",}}} disabled={!cartItems} fullWidth variant="contained" color="primary" type="submit">
                   Place Order
                 </Button>
                 <FormHelperText >

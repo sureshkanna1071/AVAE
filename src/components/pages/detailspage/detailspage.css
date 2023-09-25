@@ -1,8 +1,8 @@
 .details {
-    height: calc(100vh - 90px);
+    min-height: calc(100vh - 90px);
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     color: #4a4a4a;
 }
 
@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    height: 100%;
+    justify-content: space-around;
+    height: inherit;
     width: 60%;
     background-color: #f5f5f5;
     position: relative;
@@ -22,8 +22,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    position: absolute;
-    left: 15px
+    /* position: absolute;
+    left: 15px */
 }
 
 .details_imgcontainer-small div {
@@ -63,7 +63,7 @@
 }
 
 .details_content {
-    height: calc(100vh - 90px);
+    min-height: calc(100vh - 90px);
     width: 40%;
     overflow: auto;
 }
@@ -84,13 +84,19 @@
     font-size: larger;
 }
 
+.details_content-desc {
+    padding:  0 25px 25px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 .details_content-sizeinfo {
     padding: 25px;
     font-size: large;
 }
 
 .details_content-sizes {
-    height: 55px;
+    height: 45px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -132,30 +138,45 @@
 }
 
 .details_content-buy {
-    padding: 25px;
+    padding: 25px 25px 15px;
 }
 
 .details_content-shipdetails {
-    padding: 25px;
+    padding: 0 25px 25px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-size: small;
 }
 
-.details_detailedinfo {
-    padding: 50px;
+.details_info {
+    padding-bottom: 50px;
+}
+
+.details_info hr {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.details_info-detailedinfo {
+    padding: 15px 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
     height: auto;
 }
 
-.details_detailedinfo p {
+.details_info-detailedinfo p {
     width: 30%;
     min-width: 350px;
+}
+
+.details_info-warranty p{
+    padding: 15px 50px;
+    line-height: 1.5;
 }
 
 @media screen and (max-width: 950px) {
@@ -200,7 +221,7 @@
         right: auto;
     }
 
-    .details_detailedinfo p {
+    .details_info-detailedinfo p {
         min-width: 90vw;
     }
 
@@ -208,5 +229,9 @@
         flex-wrap: wrap;
         height: auto;
         padding: 10px 0;
+    }
+
+    .details_info hr {
+        width: 80%;
     }
 }

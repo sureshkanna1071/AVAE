@@ -48,6 +48,17 @@
     }
   }
 
+  @keyframes bounceRight {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(10px);
+    }
+    60% {
+      transform: translateX(5px);
+    }
+  }
 
 .about_details {
     display: flex;
@@ -68,6 +79,44 @@
     padding: 45px;
     border-radius: 10px;
     margin-right: 50px;
+}
+
+.about_testimonial {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+}
+
+.about_testimonial-image {
+    width: 55%; 
+    border-radius: 10px; 
+    box-shadow: 0 0 5px white;
+}
+
+.about_testimonial-review {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: lightcyan;
+    line-height: 1.5;
+}
+
+.about_testimonial-review span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: small;
+  gap: 5px;
+}
+
+.about_testimonial-nextIcon {
+  animation: bounceRight 2s infinite;
 }
 
 .about_parallax-container {
@@ -95,11 +144,7 @@
 
 .about_parallax-slopeBegin {
   background-color: #20232f;
-  clip-path: polygon(20% 0, 70% 0, 50% 100%, 0% 100%);
-}
-
-.about_parallax-slopeEnd {
-  clip-path: polygon(70% 0, 100% 0, 80% 100%, 50% 100%);
+  /* clip-path: polygon(20% 0, 70% 0, 50% 100%, 0% 100%); */
 }
 
 .about_parallax-slopeBegin,
@@ -122,13 +167,6 @@
   background: linear-gradient(to right, tomato 0%, gold 100%);
 }
 
-.about_testimonial {
-  display: flex;
-  justify-content: space-around;
-  color: white;
-  align-items: flex-end;
-}
-
 @media screen and (max-width: 1200px) {
    .about_details-description {
     max-width: 100%;
@@ -141,7 +179,24 @@
 
    .about_testimonial {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 50px
    }
+
+   .about_testimonial-image {
+    width: 85%;
+   }
+
+   .about_testimonial-review {
+    width: 80%;
+   }
+}
+
+@media screen and (max-width: 600px) {
+
+  .about_testimonial-image {
+   width: 90%;
+  }
+
 }

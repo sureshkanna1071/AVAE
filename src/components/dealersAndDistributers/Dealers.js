@@ -2,13 +2,16 @@ import React from 'react'
 import "./dealers.css"
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
+import DealersEnquiry from "../../assets/Dealer.mp4"
 
 const Dealers = () => {
   return (
     <>
       <Header />
       <div className='dealers'>
-        <iframe width="100%" height="600px" src="https://www.youtube.com/embed/bC36d8e3bb0?si=W4DXZicqT1gfHegV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <video width="100%" height="600px" controls controlsList='nodownload'>
+          <source src={DealersEnquiry} type="video/mp4" />
+        </video>
         <h2>DEALERS AND DISTRIBUTORS POLICY</h2>
         <div className='dealers_details'>
             <h4>1. Introduction:</h4>

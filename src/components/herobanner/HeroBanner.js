@@ -1,25 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./heroBanner.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import Banner01 from "../../assets/Banner01.png"
-import Banner2 from "../../assets/Banner02.png"
-import Banner3 from "../../assets/Banner03.png"
-import Banner4 from "../../assets/Banner04.png"
-import Banner5 from "../../assets/Banner5.jpg"
-import Banner6 from "../../assets/Banner6.jpg"
-import Banner7 from "../../assets/Banner7.jpg"
-import Banner8 from "../../assets/Banner8.jpg"
+
+import Banner01 from "../../assets/Banner01.jpg"
+import Banner02 from "../../assets/Banner02.jpg"
+import Banner03 from "../../assets/Banner03.jpg"
+import Banner04 from "../../assets/Banner04.jpg"
+import Banner05 from "../../assets/Banner05.jpg"
+import Banner06 from "../../assets/Banner06.jpg"
+
+import Mobile1 from "../../assets/Mobile1.jpg"
+import Mobile2 from "../../assets/Mobile2.jpg"
+import Mobile3 from "../../assets/Mobile3.jpg"
+import Mobile4 from "../../assets/Mobile4.jpg"
+import Mobile5 from "../../assets/Mobile5.jpg"
+import Mobile6 from "../../assets/Mobile6.jpg"
 
 const HeroBanner = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [])
 
   const settings = {
     dots: true,
     infinite: true,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     pauseOnHover: false,
     prevArrow: <></>,
     nextArrow: <></>,
@@ -27,89 +46,46 @@ const HeroBanner = () => {
 
   return (
     <div className="heroBanner">
-       {/* <div className='heroBanner_content'>
-       </div> */}
-       {/* <div className='heroBanner_content'>
-        <Fade top>
-          <h1 className='heroBanner_content-title'>Experience Visual & Audio Excellence with AVAE LED TVs.</h1>
-        </Fade>
-       <Jump>
-        <a href="#explore">
-          <Button 
-            variant="contained" 
-            sx={{
-              color: '#EEE', 
-              background: "rgb(rgb(255, 250, 212), green, blue)",
-              fontWeight: '700',
-              letterSpacing: "2px",
-              marginTop: "30px"
-            }}
-          >
-            Explore
-          </Button>
-        </a>
-          
-       </Jump>
-        
-       </div> */}
-         {/* <Lottie animationData={AnimationTv} onSuspendCapture={0.50} id="lottie-tv" /> */}
-         {/* <Slider {...settings}>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div>
-    </Slider> */}
-    {/* <Carousel autoPlay={true} >
-                <div>
-                <iframe style={{borderRadius: "10px", margin: '0 auto'}} height="700px" width="90%" src="https://www.youtube.com/embed/UC26n0Ol99g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div>
-                  <img className='' src={NewOne} alt="Banner" width="100%" height="100%" />
-                </div>
-                <div>
-                  <img className='' src={NewOne} alt="Banner" width="100%" height="100%" />
-                </div>
-            </Carousel> */}
-       <Slider {...settings}>
+       {width > 950 ? <Slider {...settings}>
+       <div>
+          <img src={Banner06} alt="banner" className='heroBanner-images' />
+        </div>
         <div>
           <img src={Banner01} alt="banner" className='heroBanner-images' />
         </div>
         <div>
-          <img src={Banner2} alt="banner" className='heroBanner-images' />
+          <img src={Banner05} alt="banner" className='heroBanner-images' />
         </div>
         <div>
-          <img src={Banner3} alt="banner" className='heroBanner-images' />
+          <img src={Banner03} alt="banner" className='heroBanner-images' />
         </div>
         <div>
-          <img src={Banner4} alt="banner" className='heroBanner-images' />
+          <img src={Banner04} alt="banner" className='heroBanner-images' />
         </div>
         <div>
-          <img src={Banner5} alt="banner" className='heroBanner-images' />
-        </div>
-        <div>
-          <img src={Banner6} alt="banner" className='heroBanner-images' />
-        </div>
-        <div>
-          <img src={Banner7} alt="banner" className='heroBanner-images' />
-        </div>
-        <div>
-          <img src={Banner8} alt="banner" className='heroBanner-images' />
+          <img src={Banner02} alt="banner" className='heroBanner-images' />
         </div>
       </Slider>
+      : <Slider {...settings}>
+      <div>
+        <img src={Mobile6} alt="banner" className='heroBanner-images' />
+      </div>
+      <div>
+        <img src={Mobile2} alt="banner" className='heroBanner-images' />
+      </div>
+      <div>
+        <img src={Mobile4} alt="banner" className='heroBanner-images' />
+      </div>
+      <div>
+        <img src={Mobile1} alt="banner" className='heroBanner-images' />
+      </div>
+      <div>
+        <img src={Mobile5} alt="banner" className='heroBanner-images' />
+      </div>
+      <div>
+        <img src={Mobile3} alt="banner" className='heroBanner-images' />
+      </div>
+    </Slider> }
        {/* <img className='' src={NewOne} alt="Banner" width="100%" height="100%" /> */}
     </div>
   )

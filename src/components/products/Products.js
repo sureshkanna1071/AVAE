@@ -7,14 +7,22 @@ import Remote from "../../assets/Remote.png"
 import Remotee from "../../assets/Remotee.png"
 import Roll from 'react-reveal/Roll';
 import { useNavigate } from 'react-router-dom';
+import "./products.css"
+import Bg from "../../assets/Bg.jpg"
+import Bg2 from '../../assets/Bg2.jpg'
+import Bg3 from "../../assets/Bg3.jpg"
+import Bg4 from "../../assets/bg4.jpg"
+import Bg5 from "../../assets/Bg5.jpg"
 
 const Products = () => {
   const navigate = useNavigate();
+  const bgs = [Bg, Bg2, Bg3, Bg4, Bg5];
+  const colors = ["deepskyblue", "#f73a02", "#1e65a4", "#53a49e", "#fca85c"];
   return (
     <>
       <div
         style={{
-          backgroundColor: '#e7e9eb'
+          backgroundColor: 'black'
         }}
         id="explore"
       >
@@ -23,19 +31,19 @@ const Products = () => {
               textAlign: "center",
               padding: "50px 0 25px",
               letterSpacing: '2px',
-              background: 'linear-gradient(to right, #ff3366, orange)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: 'white',
+              textShadow: "0 0 10px #5a5a5a"
             }}
           >
             LED TVs Unleashed: Uncover the Ultimate Selection for Your Entertainment!
           </h1>
       </div>
-        
-      {tvs.map((tv, index) => (
-        <Box key={tv.id} item xs={12} 
+      <div style={{display: 'flex', flexDirection: 'column', gap: '25px', backgroundColor: 'black'}}>
+        {tvs.map((tv, index) => (
+        <Fade bottom delay={250}>
+          <Box key={tv.id} xs={12} 
           sx={{
+            minHeight: "90vh",
             display: "flex", 
             flexDirection: index % 2 === 0 ? 'row' : 'row-reverse', 
             alignItems: "center",
@@ -43,71 +51,76 @@ const Products = () => {
             flexWrap: "wrap",
             gap: "25px",
             backgroundColor: "#e7e9eb",
-            padding: "100px 0"
+            padding: "100px 0",
+            backgroundImage: `url(${bgs[index]})`,
+            backgroundSize: "cover"
          }}
         >   {index % 2 === 0 
-            ?  <Fade left >
-                  <div style={{width: "50%", height: 'auto', }}>
+            ?  <Fade left delay={275}>
+                  <div className='products_image-container'>
                     <img src={tv.imageSrc} alt={tv.name} style={{ width: '100%', height: 'auto' }} />
                     <Roll right>
                       <img 
                       src={Remote} 
                       alt={tv.name} 
-                      style={{ 
-                        width: 'auto', 
-                        height: '150px',
-                        position: "absolute",
-                        rotate: "35deg",
-                        bottom: "0",
-                        right: "10px",
-                        // backgroundColor: "#353535"
-                      }} 
+                      className='products_remote'
                     />
                     </Roll>
                   </div>
                   
                 </Fade>
-            : <Fade right >
-                <div style={{width: "50%", height: 'auto', }}>
-                    <img src={tv.imageSrc} alt={tv.name} style={{ width: '100%', height: 'auto' }} />
+            : <Fade right delay={275}>
+                <div className='products_image-container'>
+                    <img src={tv.imageSrc} alt={tv.name} className='products_image' />
                     <Roll left>
                       <img 
                       src={Remotee} 
                       alt={tv.name} 
-                      style={{ 
-                        width: 'auto', 
-                        height: '150px',
-                        position: "absolute",
-                        rotate: "-35deg",
-                        bottom: "0",
-                        left: "10px",
-                        // backgroundColor: "#353535"
-                      }} 
+                      className='products_remote left-remote'
                     />
                     </Roll>
                   </div>
               </Fade>
             }
-            <div>
+            <div
+              className='products_contents'
+            >
              {/* <Lottie animationData={AnimationBg} id="lottie-tv" /> */}
-              <h1 
-              align="center" 
-              style={{
-                  textAlign: 'center',
-                  letterSpacing: '2px',
-                  background: 'linear-gradient(to right, #ff3366, orange)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-              }}
-              onClick={() => navigate("/maintenance")}
+              {tv.titleImg ? 
+              <img src={tv.titleImg} />
+              :
+              <h1
+               align="center" 
+               style={{
+                   textAlign: 'center',
+                   letterSpacing: '3px',
+                   fontSize: '50px',
+                   fontFamily: "abril fatface",
+                   color: "#fff", /* Text color */
+                   textShadow: `0 0 10px ${colors[index]}, 0 0 20px ${colors[index]}, 0 0 30px ${colors[index]}`
+               }}
               >
                 {tv.name}
-            </h1>
+              </h1>}
+              <p
+              style={{
+                textAlign: 'left',
+                lineHeight: 1.5,
+                width: "80%",
+                margin: "0 auto",
+                color: "#fff", /* Text color */
+                textShadow: `0 0 10px ${colors[index]}, 0 0 20px ${colors[index]}, 0 0 30px ${colors[index]}`
+            }}
+              >
+               {tv.description}
+              </p>
             </div>
-            
         </Box>
+        </Fade>
+        
       ))}
+      </div>
+      
     </>
   )
 }

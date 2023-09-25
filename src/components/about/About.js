@@ -6,9 +6,14 @@ import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import HikingIcon from '@mui/icons-material/Hiking';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
-import Pattern from "../../assets/Pattern.jpg"
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import VideoModal from '../VideoModal';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import Customer01 from "../../assets/customer01.jpg";
+import Customer02 from "../../assets/customer02.jpg";
+import Customer03 from "../../assets/customer03.jpg";
+import Pattern from "../../assets/Pattern.jpg"
+import { cyan } from '@mui/material/colors';
 
 const About = () => {
   const [openVideo, setOpenVideo] = useState(false);
@@ -36,14 +41,15 @@ const About = () => {
   }
 
   const testimonials = [
-    {review: "This is a test review 01, legit review will be updated soon",
-     image: Pattern,
+    {review: 
+    'Highly recommended for affordable, reliable household appliances. I recently bought a refrigerator from them and was delighted with their excellent customer service. Every team member is dedicated to helping clients.',
+     image: Customer01,
     },
-    {review: "This is a test review 02, legit review will be updated soon",
-     image: Pattern,
+    {review: "With Madha Agencies, I had an excellent experience! They are really professional and client-friendly. They assisted me and provided simple EMI alternatives for the washing machine I had just purchased from them. A huge thank you to the entire team for their tireless effort and help!",
+     image: Customer02,
     },
-    {review: "This is a test review 03, legit review will be updated soon",
-     image: Pattern,
+    {review: "Madha Agencies deserves a solid 5-star review because they consistently provide their clients with their undivided attention and effort. Throughout my purchasing journey, they excelled in explaining every detail, from the initial steps to the final ones. ",
+     image: Customer03,
     }
   ]
 
@@ -54,15 +60,15 @@ const About = () => {
       </ParallaxLayer>
   
       <ParallaxLayer offset={offset} speed={1} onClick={onClick}>
-        <div className={`about_parallax-slopeEnd about_parallax-${gradient}`} />
+        <div className={`about_parallax-slopeEnd `} />
       </ParallaxLayer>
   
       <ParallaxLayer className={`about_parallax-text`} offset={offset} speed={1}>
         <div
           className='about_testimonial'
         >
-         <img style={{height: "autopx", width: "40%", borderRadius: "10px", boxShadow: "0 0 10px white"}} src={testimonials[offset].image} />
-         <p>{`" ${testimonials[offset].review} "`}</p>
+         <img className='about_testimonial-image' src={testimonials[offset].image} />
+         <p className='about_testimonial-review'>{`" ${testimonials[offset].review} "`}<span>{offset === 2 ? "BACK" : "NEXT"}<NavigateNextIcon className='about_testimonial-nextIcon' /></span></p>
         </div>
       </ParallaxLayer>
     </>
@@ -105,7 +111,7 @@ const About = () => {
           At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
         </p>
         <Button
-          startIcon={<SmartDisplayIcon sx={{color: "#00ffff"}} />}
+          startIcon={<SmartDisplayIcon sx={{color: "cyan"}} />}
           onClick={() => {
             setOpenVideo(true);
           }}
@@ -233,7 +239,7 @@ const About = () => {
           At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
         </p>
         <Button
-          startIcon={<SmartDisplayIcon sx={{color: "#00ffff"}} />}
+          startIcon={<SmartDisplayIcon sx={{color: "cyan"}} />}
           onClick={() => {
             setOpenVideo(true);
           }}
@@ -265,7 +271,7 @@ const About = () => {
                   height: "5px",
                   borderStyle: 'none',
                   border: "none",
-                  backgroundColor: "white",
+                  backgroundColor: "#222831",
                 }} 
               />
             </div>
@@ -273,6 +279,7 @@ const About = () => {
             <p
               style={{
                 lineHeight: 2,
+                color: "white"
               }}
             >
               Madha Agencies, based in Tamil Nadu, serves as a distributor for their proprietary line of LED TVs, household appliances, and various other consumer electronics. The establishment, established in 2016 and helmed by Mr. George Wilson, has successfully orchestrated the distribution of its offerings through a network of dealers and distributors across Southern Tamil Nadu, Pondicherry, and Kerala.
@@ -299,7 +306,7 @@ const About = () => {
                   height: "5px",
                   borderStyle: 'none',
                   border: "none",
-                  backgroundColor: "#20232f"
+                  backgroundColor: "#222831"
                 }} 
               />
             </div>
@@ -307,6 +314,7 @@ const About = () => {
             <p
               style={{
                 lineHeight: 2,
+                color: "white"
               }}
             >
               At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
@@ -315,63 +323,16 @@ const About = () => {
       </>}
     </div>
     <>
-      <h1 style={{ backgroundColor: '#20232f', color: 'white', textAlign: "center", padding: "15px", letterSpacing: 3 }}><AutoAwesomeIcon sx={{color: 'orange'}} /> Words from Our Satisfied Customers <AutoAwesomeIcon sx={{color: 'orange'}} /></h1>
+      <h1 style={{ backgroundColor: '#20232f', color: 'white', textAlign: "center", padding: "15px", width: "100%", letterSpacing: 3 }}><AutoAwesomeIcon sx={{color: 'orange'}} /> Words from Our Satisfied Customers <AutoAwesomeIcon sx={{color: 'orange'}} /></h1>
       <div style={{ backgroundColor: '#dfdfdf', minHeight: '100vh' }}>
         
         <Parallax className="about_parallax-container" ref={parallax} pages={3} horizontal>
-          <Page offset={0} gradient="pink" onClick={() => scroll(1)} />
+          <Page offset={0} gradient="teal" onClick={() => scroll(1)} />
           <Page offset={1} gradient="teal" onClick={() => scroll(2)} />
-          <Page offset={2} gradient="tomato" onClick={() => scroll(0)} />
+          <Page offset={2} gradient="teal" onClick={() => scroll(0)} />
         </Parallax>
       </div>
     </>
-   
-        
-        {/* <div className='about_details'>
-          <img src={NewLogo} al="Logo" width="550px" />
-          <div className='about_details-description'>
-            <div>
-              <h2
-                style={{
-                  letterSpacing: "2px",
-                  marginBottom: '5px',
-                  display: "flex",
-                  alignItems: "center",
-                  gap: '25px'
-                }}
-              >
-                <HikingIcon fontSize='large' />Our Mission 
-              </h2>
-              <hr 
-                style={{
-                  width: "70%",
-                  height: "5px",
-                  backgroundColor: "#f50909",
-                  borderStyle: 'none',
-                  border: "none",
-                }} 
-              />
-            </div>
-            
-            <p
-              style={{
-                lineHeight: 2,
-              }}
-            >
-              At AVAE, our mission is to transform the way you experience entertainment and information through the power of cutting-edge LED technology. We are driven by a passion for redefining visual excellence, setting new standards for immersive viewing, and enhancing your everyday moments.
-            </p>
-            <Button
-              startIcon={<SmartDisplayIcon sx={{color: "red"}} />}
-              onClick={() => {
-                setOpenVideo(true);
-              }}
-              variant='contained'
-              sx={{color: 'black', backgroundColor: 'white',  transition: "transform 0.3s ease-in-out", "&:hover": {color: 'white', backgroundColor: 'black', transform: "scale(1.1)", boxShadow: "0 0 7px #5a5a5a"}}}
-            >
-              <h4>Watch Video</h4>
-            </Button>
-          </div>
-        </div> */}
         <VideoModal openVideo={openVideo} setOpenVideo={setOpenVideo} />
     </>
   )

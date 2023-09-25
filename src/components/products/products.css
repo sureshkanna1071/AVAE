@@ -1,0 +1,51 @@
+.products_image {
+    width: 100%;
+    height: auto;
+}
+
+.products_image-container {
+    width: 40%;
+}
+
+.products_contents {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.products_remote {
+    width: auto;
+    height: 150px;
+    position: absolute;
+    rotate: 35deg;
+    bottom: 0;
+    right: 10px;
+}
+
+.left-remote {
+    left: 10px;
+    rotate: -35deg;
+}
+
+@media screen and (max-width: 910px) {
+    .products_image-container {
+       width: 90%;
+    }
+
+    .products_contents {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .products_remote {
+        height: 100px;
+    }
+
+    h1 {
+        font-size: medium;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

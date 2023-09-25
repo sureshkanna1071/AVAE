@@ -1,19 +1,27 @@
 import React, { useState } from 'react'
 import "./header.css"
-import {Button, IconButton, Menu, MenuItem, Modal, Tooltip} from "@mui/material"
+import {Badge, Button, IconButton, Popover, Modal, Tooltip} from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import NewLogo from "../../assets/NewLogo.png";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContextProvider';
+import { TbTruckDelivery } from 'react-icons/tb';
+import Cookies from 'js-cookie';
+import axios from 'axios';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+  const [openOrders, setOpenOrders] = useState(false);
   const navigate = useNavigate();
   const {cartItems, setCartItems} = useContext(CartContext);
+  const location = useLocation();
+  const pathname = location.pathname;
+  const [orders, setOrders] = useState(Cookies.get('orders') ? JSON.parse(Cookies.get('orders')) : null);
+
 
   const handleClick = (e) => {
     setOpen(!open);
@@ -24,15 +32,13 @@ const Header = () => {
     setOpenCart(false);
   }
 
-  console.log(cartItems)
-
   return (
     <div className='header'>
        <a href='/'><img src={NewLogo} alt='Madha Agencies Logo' height="auto" width="160px" /></a>
        <div className='header_nav'>
-          <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
-          <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
           <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
+          <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
+          <a style={{textDecoration: "none"}} href='/dealers'><p className='header_nav-items'>Dealers Enquiry</p></a>
           <p onClick={() => navigate("/contact")} className='header_nav-items'>Contact Us</p>
        </div>
        <button 
@@ -41,8 +47,8 @@ const Header = () => {
        >
          <p>SHOP</p>
         </button>
-        <Tooltip title="Cart"><IconButton onClick={() => setOpenCart(true)}><ShoppingCartIcon /></IconButton></Tooltip>
-        <div className='header_menu'>
+        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: "50px"}}>
+          <div className='header_menu'>
           {open ? <CloseIcon sx={{color: "#CF0A0A"}} onClick={handleClick} /> :  <MenuIcon sx={{color: "#CF0A0A"}} onClick={handleClick} />}
             {open && 
               <div className='header_menu-links scale-up-center'>
@@ -52,6 +58,15 @@ const Header = () => {
                 <p onClick={() => navigate("/contact")} className='header_nav-items'>Contact Us</p>
               </div>
             }
+        </div>
+        <div>
+          <Badge sx={{marginRight: '8px'}} badgeContent={cartItems ? 1 : 0} color="primary" overlap="circular">
+            <Tooltip title="Cart"><IconButton onClick={() => setOpenCart(true)}><ShoppingCartIcon /></IconButton></Tooltip>
+          </Badge>
+          <Badge sx={{marginRight: '8px'}} badgeContent={orders && orders.length} color="primary" overlap="circular">
+            <Tooltip title="My Orders"><IconButton onClick={() => setOpenOrders(true)}><TbTruckDelivery /></IconButton></Tooltip>
+          </Badge>
+        </div>
         </div>
         <Modal
           open={openCart}
@@ -73,19 +88,55 @@ const Header = () => {
               <div className='cart_items-box'>
                 {cartItems 
                   ? <>
-                      <img src={cartItems.image} alt="" height="75px" width="75px" />
-                      <p style={{width: "60%"}}>{cartItems.name}</p>
+                      <img src={cartItems.image_urls[0]} alt="" height="75px" width="75px" />
+                      <p style={{width: "60%"}}>{cartItems.title}</p>
                       <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}} >
                         <p>₹ {cartItems.price}</p>
-                        <Button onClick={() => setCartItems(null)} size='small' variant='outlined' color="error">Remove</Button>
+                        <Button onClick={() => {
+                            setCartItems(null);
+                            Cookies.remove("cart");
+                          }} size='small' variant='outlined' color="error">Remove</Button>
                       </div>
                     </>
                   : <p className='cart_items-empty'>Your cart is empty.</p>}
               </div>
+              <hr />
             </div>
             <hr />
             <div className='cart_checkout'>
               <Button onClick={handleCheckout} disabled={!cartItems} sx={{backgroundColor: "black", color: "white", "&:hover": {backgroundColor: "black", color: "white",}}} fullWidth variant="contained">CHECKOUT</Button>
+            </div>
+          </div>
+        </Modal>
+        <Modal
+          open={openOrders}
+          onClose={() => setOpenOrders(false)}
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end"
+          }}
+        >
+          <div
+            className='cart'
+          >
+            <div className='cart_header'>
+              <h4 style={{letterSpacing: 2}}>My Orders</h4>
+              <IconButton onClick={() => setOpenOrders(false)}><CloseIcon fontSize='small' /></IconButton>
+            </div>
+            <hr />
+            <div className='cart_items'>
+            {orders && orders?.map((order, i) =>
+              <>
+                <div className='cart_items-box'>
+                  <img src={order?.image_urls[0]} alt="" height="75px" width="75px" />
+                  <p style={{width: "60%"}}>{order?.title}</p>
+                  <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}} >
+                    <p>₹ {order?.price}</p>
+                  </div>
+                </div>
+                <hr />
+              </>
+            )}
             </div>
           </div>
         </Modal>

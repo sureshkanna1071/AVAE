@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./categories.css"
 import Header from '../../header/Header'
 import Footer from '../../footer/Footer'
@@ -9,10 +9,24 @@ import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 import { useState } from 'react'
 import VideoModal from '../../VideoModal'
-import ShowCard from '../../showcard/ShowCard'
+import ProductCard from '../../productcard/ProductCard'
+import axios from 'axios'
 
 const Categories = () => {
   const [openVideo, setOpenVideo] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://avaeserver.onrender.com/categories")
+         .then((res) => {
+          console.log(res);
+          setCategories(res.data);
+         })
+         .catch((err) => {
+          console.log(err);
+         })
+  }, []);
+
   return (
     <>
       <Header />
@@ -21,9 +35,8 @@ const Categories = () => {
         <div className='shop_categories-tvs'>
           <h3 className='shop_categories-title'>LED TVS</h3>
           <div className='shop_categories-list'>
-            {tvs.map((tv) => <ShowCard {...tv} />)}
+            {categories.map((tv, i) => <ProductCard key={i} {...tv} />)}
           </div>
-          
         </div>
       </div>
       <div className='shopwithus'>

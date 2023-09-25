@@ -1,0 +1,12 @@
+.order_success-message {
+    width: 50%;
+    line-height: 2;
+    font-size: large;
+    text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+    .order_success-message {
+        width: 90%
+    }
+}

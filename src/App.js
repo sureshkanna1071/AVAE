@@ -17,10 +17,12 @@ import CartContextProvider from './components/contexts/CartContextProvider';
 import Terms from './components/terms/Terms';
 import Shipping from './components/shippingPolicy/Shipping';
 import Refund from './components/refundPolicy/Refund';
-// import Dealers from './components/dealersAndDistributers/Dealers';
+import Dealers from './components/dealersAndDistributers/Dealers';
 import Order from './components/order/Order';
 import Privacy from './components/privacy/Privacy';
 import ContactUs from './components/pages/contactus/ContactUs';
+import Deal from './components/Dealer/Deal';
+import Success from './components/pages/success/Success';
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
               <Products />
               <Features />
               {/* <About /> */}
+              <Deal />
               <Footer />
             </>} 
           />
@@ -44,13 +47,15 @@ function App() {
           <Route path='/maintenance' element={<Maintenance />} />
           <Route path='/aboutus' element={<Aboutus />} />
           <Route path='/shop' element={<Categories />} />
-          <Route path="/castor" element={<DetailsPage />} />
           <Route path='/terms' element={<Terms />} />
           <Route path='/shipping' element={<Shipping />} />
           <Route path='/refund' element={<Refund />} />
           <Route path='/contact' element={<ContactUs />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/order" element={<Order />} />
+          <Route path='/dealers' element={<Dealers />} />
+          <Route path="/tv/:series" element={<DetailsPage />} />
+          <Route path="/thankyou" element={<Success />} />
       </Routes>
     </BrowserRouter>
    </CartContextProvider>

@@ -1,9 +1,4 @@
 import React, { useState } from 'react'
-import Cas01 from '../../../assets/castor/Cas01.png';
-import Cas02 from '../../../assets/castor/Cas02.png';
-import Cas03 from '../../../assets/castor/Cas03.png';
-import Cas04 from '../../../assets/castor/Cas04.png';
-import Cas05 from '../../../assets/castor/Cas05.png';
 import Remote from "../../../assets/Remote.png"
 import Hdmi from "../../../assets/Hdmi.png"
 import Cast from '../../../assets/Cast.png';

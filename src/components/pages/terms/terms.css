@@ -16,3 +16,12 @@
     gap: 20px;
     padding: 25px;
 }
+
+@media screen and (max-width: 500px) {
+    .terms {
+        width: 100%;
+        padding: 10px;
+        line-height: 1.5;
+        font-size: small;
+    }
+}

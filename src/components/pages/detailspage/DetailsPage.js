@@ -5,7 +5,7 @@ import Cast from '../../../assets/Cast.png';
 import Dolby from '../../../assets/Dolby.png';
 import Andriod from '../../../assets/Android.png';
 import "./detailspage.css"
-import { Button, Chip, CircularProgress, Snackbar } from '@mui/material';
+import { Button, Chip, CircularProgress, LinearProgress, Snackbar } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../header/Header';
 import ShopIcon from '@mui/icons-material/Shop';
@@ -48,14 +48,12 @@ const DetailsPage = () => {
     setOpenSnackbar(false);
   };
 
-  console.log("currentItem", currentItem.highlights)
-
   return (
     <>
         <Header />
         {loading 
-         ? <div style={{height: "90vh", width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <CircularProgress />
+         ? <div style={{height: "90vh", width: '100%'}}>
+            <LinearProgress />
            </div>
          : 
          <>
@@ -65,11 +63,6 @@ const DetailsPage = () => {
                 {currentItem && currentItem?.image_urls.map((img, i) => 
                   <div style={{border: imageSrc === img && "1.5px solid black", height: '70px', width: "70px", padding: "5px"}} onClick={() => setImageSrc(img)}><img src={img} width="60px" style={{maxHeight: "60px",}} /></div>
                 )}
-                {/* <div style={{border: imageSrc === Cas01 && "1.5px solid black"}} onClick={() => setImageSrc(Cas01)}><img src={Cas01} width="65px" style={{maxHeight: "250px"}} /></div>
-                <div style={{border: imageSrc === Cas03 && "1.5px solid black"}} onClick={() => setImageSrc(Cas03)}><img src={Cas03} width="65px" style={{maxHeight: "250px"}} /></div>
-                <div style={{border: imageSrc === Cas02 && "1.5px solid black"}} onClick={() => setImageSrc(Cas02)}><img src={Cas02} width="65px" style={{maxHeight: "250px"}} /></div>
-                <div style={{border: imageSrc === Cas05 && "1.5px solid black"}} onClick={() => setImageSrc(Cas05)}><img src={Cas05} width="65px" style={{maxHeight: "250px"}} /></div>
-                <div style={{border: imageSrc === Remote && "1.5px solid black"}} onClick={() => setImageSrc(Remote)}><img src={Remote} style={{maxHeight: "65px"}} /></div> */}
               </div>
               <div className='details_imgcontainer-large'>
                 <img src={imageSrc} />

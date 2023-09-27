@@ -1,4 +1,4 @@
-.refund {
+.shipping {
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -10,9 +10,18 @@
     margin: 0 auto;
 }
 
-.refund_details {
+.shipping_details {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 25px;
+}
+
+@media screen and (max-width: 500px) {
+    .shipping {
+        width: 100%;
+        padding: 10px;
+        line-height: 1.5;
+        font-size: small;
+    }
 }

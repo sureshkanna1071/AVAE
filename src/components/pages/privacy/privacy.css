@@ -1,4 +1,4 @@
-.shipping {
+.privacy {
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -10,9 +10,22 @@
     margin: 0 auto;
 }
 
-.shipping_details {
+.privacy_details {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 25px;
+}
+
+.privacy_details ul {
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 500px) {
+    .privacy {
+        width: 100%;
+        padding: 10px;
+        line-height: 1.5;
+        font-size: small;
+    }
 }

@@ -148,7 +148,7 @@ const DetailsPage = () => {
           </div>
           <div className='details_info'>
             <div>
-              <h4 style={{ margin: "20px 50px"}}>DETAILED INFORMATION</h4>
+              <h4 className='details_info-title'>DETAILED INFORMATION</h4>
               <div
                 className='details_info-detailedinfo'
               >
@@ -161,7 +161,7 @@ const DetailsPage = () => {
             </div>
             <hr />
             <div>
-              <h4 style={{ margin: "20px 50px"}}>WARRANTY</h4>
+              <h4 className='details_info-title'>WARRANTY</h4>
               <div
                 className='details_info-warranty'
               >

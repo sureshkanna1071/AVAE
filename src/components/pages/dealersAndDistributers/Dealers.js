@@ -1,8 +1,8 @@
 import React from 'react'
 import "./dealers.css"
-import Header from '../header/Header'
-import Footer from '../footer/Footer'
-import DealersEnquiry from "../../assets/Dealer.mp4"
+import Header from '../../header/Header'
+import Footer from '../../footer/Footer'
+import DealersEnquiry from "../../../assets/Dealer.mp4"
 
 const Dealers = () => {
   return (

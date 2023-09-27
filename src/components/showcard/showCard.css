@@ -26,6 +26,7 @@
 
 .showcard p {
     width: 80%;
+    text-align: justify;
 }
 
 .showcard-image {
@@ -40,12 +41,12 @@
 }
 
 .showcard-details {
-    height: 50px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -59,5 +60,14 @@
     .showcard {
         width: 80%;
         height: auto;
+    }
+
+    .showcard-details {
+        gap: 10px;
+    }
+
+    .showcard p {
+        width: 80%;
+        font-size: 10px;
     }
 }

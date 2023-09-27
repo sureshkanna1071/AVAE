@@ -47,7 +47,7 @@ const Categories = () => {
             </div>
           </div>
           <div className='shopwithus'>
-            <h1 style={{color: 'darkblue', letterSpacing: '2px'}}><AutoAwesomeIcon /> Why shop with us? <AutoAwesomeIcon /></h1>
+            <h1 style={{color: 'darkblue', letterSpacing: '2px', textAlign: "center"}}><AutoAwesomeIcon /> Why shop with us? <AutoAwesomeIcon /></h1>
             <p className='shopwithus-details'>
             Our primary goal is to offer unparalleled customer service and reliable guidance when selecting the finest home appliances for our clients' residences. Furthermore, we extend complimentary delivery services for all our products, ensuring secure transport right to your doorstep. For added convenience, we facilitate EMIs to make your purchases more manageable. We assure your contentment with our essential merchandise and commit to exceeding expectations through our dedicated customer support team, committed to providing top-notch assistance.
               </p>

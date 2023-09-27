@@ -1,11 +1,11 @@
-import { TextField, Select, MenuItem, FormControl,InputLabel,FormHelperText, Button } from '@mui/material'
+import { TextField, Select, MenuItem, FormControl, InputLabel, FormHelperText, Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { CartContext } from '../contexts/CartContextProvider';
+import { CartContext } from '../../contexts/CartContextProvider';
 import { useContext } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import "./order.css"
-import "../header/header.css"
+import "../../header/header.css"
 import { useNavigate } from 'react-router-dom';
 import { FaCreditCard } from 'react-icons/fa';
 import { BsBank2, BsQrCodeScan } from 'react-icons/bs';
@@ -63,7 +63,6 @@ const Order = () => {
 
   const handlePayment = (order) => {
     if (!order) {
-      // Handle scenario where order is not created yet
       return;
     }
 

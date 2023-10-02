@@ -33,8 +33,6 @@
 }
 
 .header_nav-items:hover  {
-    background-color: black;
-    color: #e7e9eb;
     transform: scale(1.1);
 }
 

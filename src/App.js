@@ -23,6 +23,7 @@ import Privacy from './components/pages/privacy/Privacy';
 import ContactUs from './components/pages/contactus/ContactUs';
 import Deal from './components/Dealer/Deal';
 import Success from './components/pages/success/Success';
+import Careers from './components/pages/careers/Careers';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path='/products' element={<Upcoming />} />
           <Route path='/maintenance' element={<Maintenance />} />
           <Route path='/aboutus' element={<Aboutus />} />
+          <Route path='/careers' element={<Careers />} />
           <Route path='/shop' element={<Categories />} />
           <Route path='/terms' element={<Terms />} />
           <Route path='/shipping' element={<Shipping />} />

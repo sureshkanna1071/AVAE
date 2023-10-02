@@ -35,10 +35,11 @@ const Header = () => {
     <div className='header'>
        <a href='/'><img src={NewLogo} alt='Madha Agencies Logo' height="auto" width="160px" /></a>
        <div className='header_nav'>
-          <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
+          <a href='/aboutus' style={{textDecoration: 'none'}}><p className='header_nav-items'>About</p></a>
+          <a style={{textDecoration: "none"}} onClick={() => navigate("/")} href='/#explore'><p className='header_nav-items'>Products</p></a>
           <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
           <a style={{textDecoration: "none"}} href='/dealers'><p className='header_nav-items'>Dealers Enquiry</p></a>
-          <p onClick={() => navigate("/contact")} className='header_nav-items'>Contact Us</p>
+          <a href='/careers' style={{textDecoration: 'none'}}><p className='header_nav-items'>Careers</p></a>
        </div>
        <Hidden smDown>
         <Button
@@ -66,11 +67,12 @@ const Header = () => {
             {open ? <CloseIcon sx={{color: "#CF0A0A"}} onClick={handleClick} /> :  <MenuIcon sx={{color: "#CF0A0A"}} onClick={handleClick} />}
               {open && 
                 <div className='header_menu-links scale-up-center'>
-                  <p onClick={() => navigate("/")} className='header_nav-items'>Home</p>
+                  <a href='/' style={{textDecoration: 'none'}}><p className='header_nav-items'>Home</p></a>
+                  <a href='/aboutus' style={{textDecoration: 'none'}}><p className='header_nav-items'>About Us</p></a>
                   <a href='/products' style={{textDecoration: 'none'}}><p className='header_nav-items'>Future Products</p></a>
-                  <p onClick={() => navigate("/aboutus")} className='header_nav-items'>About</p>
-                  <p onClick={() => navigate("/contact")} className='header_nav-items'>Contact Us</p>
-                  <p onClick={() => navigate("/shop")} className='header_nav-items'>Store</p>
+                  <a href='/contact' style={{textDecoration: 'none'}}><p className='header_nav-items'>Contact Us</p></a>
+                  <a href='/careers' style={{textDecoration: 'none'}}><p className='header_nav-items'>Careers</p></a>
+                  <a href='/shop' style={{textDecoration: 'none'}}><p className='header_nav-items'>Store</p></a>
                 </div>
               }
           </div>
@@ -142,7 +144,7 @@ const Header = () => {
             <div className='cart_items'>
             {orders && orders?.map((order, i) =>
               <>
-                <div className='cart_items-box'>
+                <div key={i} className='cart_items-box'>
                   <img src={order?.image_urls[0]} alt="" width="75px" />
                   <p style={{width: "60%"}}>{order?.title}</p>
                   <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}} >

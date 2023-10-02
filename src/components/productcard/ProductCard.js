@@ -13,8 +13,8 @@ const ProductCard = ({id, name, series, image_url, price_range, size, videoUrl})
       <hr width="90%" />
       <div className='card-details'>
           <h5>{name}</h5>
-          <Chip color='success' variant='outlined' size='small' label={`Range: ${price_range}`}/>
-          <Chip color='primary' variant='outlined' size='small' label={`Size: ${size}`}/>
+          <Chip color='success' variant='outlined' size='small' label={`Price: ${price_range}`} />
+          <Chip color='primary' variant='outlined' size='small' label={`Size: ${size}`} sx={{width: '100%'}} />
       </div>
     </div>
   )

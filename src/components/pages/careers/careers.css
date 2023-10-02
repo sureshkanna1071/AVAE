@@ -1,0 +1,32 @@
+.careers {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.careers_banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 40%;
+    font-size: x-large;
+    line-height: 1.5;
+}
+
+.careers_positions {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.careers_positions-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}

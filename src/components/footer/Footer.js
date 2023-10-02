@@ -23,6 +23,8 @@ const Footer = () => {
         <a href='/refund'>REFUND POLICY </a>
         <hr />
         <a href='/privacy'>PRIVACY POLICY </a>
+        <hr />
+        <a href='/contact'>CONTACT US</a>
       </div>
     </div>
   )

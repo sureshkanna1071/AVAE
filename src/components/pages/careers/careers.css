@@ -16,6 +16,10 @@
     line-height: 1.5;
 }
 
+.careers_banner-anime {
+    width: 50%;
+}
+
 .careers_positions {
     padding: 50px;
     display: flex;
@@ -29,4 +33,35 @@
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
+}
+
+.careers_positions-card {
+    max-width: 350px;
+}
+
+@media screen and (max-width: 900px) {
+    .careers {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 0;
+        gap: 20px;
+    }
+
+    .careers_banner-content {
+        width: 80%;
+    }
+
+    .careers_banner-anime {
+        width: 80%;
+    }
+
+    .careers_positions {
+        padding: 50px 0;
+    }
+
+    .careers_positions-card {
+        max-width: unset;
+        width: 80%;
+    }
+
 }

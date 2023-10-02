@@ -76,16 +76,16 @@ const Careers = () => {
       <Header />
       <div className='careers'>
         <div className='careers_banner-content'>
-          <h1 style={{letterSpacing: '2px',}}>Build Your Future Here.</h1>
+          <h1 style={{letterSpacing: '2px', margin: '0'}}>Build Your Future Here.</h1>
           <p style={{fontSize: 'medium',}}>Join AVAE - where careers thrive. We're on the lookout for passionate, talented individuals to join our dynamic team. Explore our job openings and start your journey towards a fulfilling career with us today!</p>
         </div>
-        <Lottie animationData={AnimationData} style={{width: "50%"}} /> 
+        <Lottie animationData={AnimationData} className='careers_banner-anime' /> 
       </div>
       <div className='careers_positions'>
         <h1 style={{textAlign: "center"}}>Open Positions</h1>
         <div className='careers_positions-container'>
           {positions && positions.map((position, i) => 
-          <Card key={i} sx={{ maxWidth: 345 }}>
+          <Card key={i} className='careers_positions-card'>
             <CardMedia
               component="img"
               alt={position.title}

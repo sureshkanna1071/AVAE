@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaCreditCard } from 'react-icons/fa';
 import { BsBank2, BsQrCodeScan } from 'react-icons/bs';
 import Cookies from 'js-cookie';
+import { LoadingButton } from '@mui/lab';
 
 const Order = () => {
   const [order, setOrder] = useState(null);
@@ -23,6 +24,7 @@ const Order = () => {
   const [state, setState] = useState('');
   const [city, setCity] = useState('');
   const [postalCode, setPostalCode] = useState('');
+  const [loading, setLoading] = useState(false);
   let userData = {
         firstName,
         lastName,
@@ -43,7 +45,7 @@ const Order = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+    setLoading(true);
     try {
       const response = await axios.post('https://avaeserver.onrender.com/orders', {
         amount: cartItems.amount || 400000,
@@ -53,11 +55,12 @@ const Order = () => {
       });
       if(response.status === 200) {
         handlePayment(response.data);
+        setLoading(false);
       }
       
     } catch (error) {
       console.error('Error creating order:', error);
-      // Handle error display or user notification
+      setLoading(false);
     }
   };
 
@@ -69,7 +72,7 @@ const Order = () => {
     // Proceed with payment handling using Razorpay SDK
     const options = {
       key: process.env.REACT_APP_RAZORPAY_API_KEY,
-      amount: order.amount, // Amount in paise
+      amount: order.amount,
       currency: 'INR',
       name: 'AVAE',
       description: 'Test Payment',
@@ -236,9 +239,9 @@ const Order = () => {
                   <FormHelperText sx={{color: "red"}}>Do not proceed with the order if your current state is not among the following: Tamil Nadu, Kerala, or Puducherry.</FormHelperText>
                 </FormControl>
                 <hr style={{height: "1px", width: "100%", backgroundColor: "#5a5a5a"}} />
-                <Button sx={{backgroundColor: "#0046bf", color: "aliceblue", "&:hover": {backgroundColor: "#0046bf", color: "aliceblue",}}} disabled={!cartItems} fullWidth variant="contained" color="primary" type="submit">
+                <LoadingButton loading={loading} sx={{backgroundColor: "#0046bf", color: "aliceblue", "&:hover": {backgroundColor: "#0046bf", color: "aliceblue",}}} disabled={!cartItems} fullWidth variant="contained" color="primary" type="submit">
                   Place Order
-                </Button>
+                </LoadingButton>
                 <FormHelperText >
                   By clicking 'PLACE ORDER', you acknowledge that you have reviewed and consent to be bound by all the terms and conditions outlined in the agreement.
                 </FormHelperText>

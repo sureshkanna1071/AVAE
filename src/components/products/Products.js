@@ -8,7 +8,7 @@ import Remotee from "../../assets/Remotee.png"
 import Roll from 'react-reveal/Roll';
 import { useNavigate } from 'react-router-dom';
 import "./products.css"
-import Bg from "../../assets/Bg.jpg"
+import Bg from "../../assets/Bg.webp"
 import Bg2 from '../../assets/Bg2.jpg'
 import Bg3 from "../../assets/Bg3.jpg"
 import Bg4 from "../../assets/bg4.jpg"

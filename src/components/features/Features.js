@@ -6,14 +6,14 @@ import ShowCard from '../showcard/ShowCard'
 
 import Fire from "../../assets/Castor.png"
 import Space from "../../assets/Polaris.png"
-import Wind from "../../assets/Wind.png"
+import Wind from "../../assets/Wind.webp"
 import Sand from "../../assets/Sand.png"
 import Water from "../../assets/Water.png"
 
 import TerraFont from "../../assets/TerraFont.png"
 import FireFont from "../../assets/FireFont.png"
 import AirFont from "../../assets/AirFont.png"
-import WaterFont from "../../assets/WaterFont.png"
+import WaterFont from "../../assets/WaterFont.webp"
 import SpaceFont from "../../assets/SpaceFont.png"
 
 export const tvs = [

@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import "./products.css"
 import Bg from "../../assets/Bg.webp"
 import Bg2 from '../../assets/Bg2.jpg'
-import Bg3 from "../../assets/Bg3.jpg"
+import Bg3 from "../../assets/Bg3.webp"
 import Bg4 from "../../assets/bg4.jpg"
 import Bg5 from "../../assets/Bg5.jpg"
 

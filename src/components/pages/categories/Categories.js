@@ -16,6 +16,7 @@ const Categories = () => {
   const [openVideo, setOpenVideo] = useState(false);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -25,7 +26,8 @@ const Categories = () => {
           setLoading(false);
          })
          .catch((err) => {
-          console.log(err);
+          setLoading(false);
+          setError(err.message);
          })
   }, []);
 
@@ -42,7 +44,10 @@ const Categories = () => {
             <div className='shop_categories-tvs'>
               <h3 className='shop_categories-title'>LED TVS</h3>
               <div className='shop_categories-list'>
-                {categories.map((tv, i) => <ProductCard key={i} {...tv} />)}
+                {error 
+                  ? <p className='shop-error'>{`Failed to load products data due to ${error}.`}</p>
+                  : categories.map((tv, i) => <ProductCard key={i} {...tv} />)
+                }
               </div>
             </div>
           </div>

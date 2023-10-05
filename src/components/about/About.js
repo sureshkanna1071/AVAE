@@ -13,7 +13,7 @@ import Customer01 from "../../assets/customer01.jpg";
 import Customer02 from "../../assets/customer02.jpg";
 import Customer03 from "../../assets/customer03.jpg";
 import Pattern from "../../assets/Pattern.jpg"
-import { cyan } from '@mui/material/colors';
+import AboutVideo from "../../assets/AboutVideo.mp4"
 
 const About = () => {
   const [openVideo, setOpenVideo] = useState(false);
@@ -94,7 +94,7 @@ const About = () => {
         }}
       >
         <ParallaxLayer offset={0} speed={0.01} style={{ display: "flex", alignItems: "center", justifyContent: 'center', height: "calc(100vh - 100px)" }}>
-        <div
+        {/* <div
           className='about_container'
         >
           <img src={Pattern} alt="Pattern" height="auto" width="90%" style={{position: "absolute", borderRadius: '20px'}} />
@@ -128,7 +128,10 @@ const About = () => {
           Scroll down
         </p>
         <KeyboardDoubleArrowDownIcon className='scroll-icon' sx={{color: "#001f3f"}} />
-      </div>
+      </div> */}
+      <video width="100%" controls>
+        <source src={AboutVideo} type='video/mp4' />
+      </video>
         </ParallaxLayer>
 
         <ParallaxLayer sticky={{ start: 1, end: 3 }} style={{ display: "flex", alignItems: "center", justifyContent: 'flex-start', padding: "25px" }}>

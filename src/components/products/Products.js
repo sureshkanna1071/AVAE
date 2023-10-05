@@ -2,13 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { tvs } from '../features/Features'
 import { Box, Typography } from '@mui/material'
 import { Fade } from 'react-reveal'
-import Slide from 'react-reveal/Slide';
-import Remote from "../../assets/Remote.png"
-import Remotee from "../../assets/Remotee.png"
-import Roll from 'react-reveal/Roll';
 import { useNavigate } from 'react-router-dom';
 import "./products.css"
-import Bg from "../../assets/Bg.webp"
+import Bg from "../../assets/Bg.jpg"
 import Bg2 from '../../assets/Bg2.jpg'
 import Bg3 from "../../assets/Bg3.webp"
 import Bg4 from "../../assets/bg4.jpg"

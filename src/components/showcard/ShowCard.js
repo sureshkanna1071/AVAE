@@ -4,7 +4,7 @@ import { Button, Chip, IconButton, Paper } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const ShowCard = ({id, name, imageSrc2, series, description}) => {
+const ShowCard = ({id, name, imageSrc2, series, description, description2}) => {
   const navigate = useNavigate();
   
   return (
@@ -18,7 +18,7 @@ const ShowCard = ({id, name, imageSrc2, series, description}) => {
           <h4>₹ 50,000</h4>
       </div>
       <div className='showcard-details'>
-        <p>{description}</p>
+        <p style={{fontSize: 'small'}}>{description2}</p>
         <Button size='small' color='success' startIcon={<ShoppingCartIcon />} variant='contained' sx={{backgroundColor: "black"}}> BUY</Button>
       </div>
     </div>

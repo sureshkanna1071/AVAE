@@ -12,7 +12,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Customer01 from "../../assets/customer01.jpg";
 import Customer02 from "../../assets/customer02.jpg";
 import Customer03 from "../../assets/customer03.jpg";
-import Pattern from "../../assets/Pattern.jpg"
+import Thumpnail from "../../assets/Thump01.webp"
 import AboutVideo from "../../assets/AboutVideo.mp4"
 
 const About = () => {
@@ -129,7 +129,7 @@ const About = () => {
         </p>
         <KeyboardDoubleArrowDownIcon className='scroll-icon' sx={{color: "#001f3f"}} />
       </div> */}
-      <video width="100%" controls>
+      <video poster={Thumpnail} width="100%" controls>
         <source src={AboutVideo} type='video/mp4' />
       </video>
         </ParallaxLayer>
@@ -227,7 +227,7 @@ const About = () => {
         </ParallaxLayer>
       </Parallax>
       : <>
-      <div
+      {/* <div
           className='about_container'
         >
         <h1 className='about_title'>Discover Our Story: Unveiling the Heart and Soul Behind AVAE</h1>
@@ -253,7 +253,10 @@ const About = () => {
         </Button>
         <p >Scroll down</p>
         <KeyboardDoubleArrowDownIcon className='scroll-icon' sx={{color: "#001f3f"}} />
-      </div>
+      </div> */}
+      <video style={{minHeight: '90vh'}} poster={Thumpnail} width="100%" controls>
+        <source src={AboutVideo} type='video/mp4' />
+      </video>
       <div className='about_details-description about_parallax-teal'>
             <div>
               <h2

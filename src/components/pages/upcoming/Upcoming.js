@@ -14,6 +14,7 @@ import ArcaneTv from "../../../assets/ArcaneTv.png"
 import ShopIcon from '@mui/icons-material/Shop';
 import { useNavigate } from 'react-router-dom'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import Marquee from 'react-fast-marquee'
 
 const Upcoming = () => {
   const navigate = useNavigate();
@@ -52,16 +53,27 @@ const Upcoming = () => {
   return (
     <>
       <Header />
-      <div className='upcomings_slider'>
+      <div>
         <h1
           style={{
-            height: "90vh",
-            position: "absolute",
             letterSpacing: "2px",
             color: "#222831",
             textAlign: "center"
           }}
-        ><AutoAwesomeIcon fontSize='small' />  Unveiling Madha Agencies' Upcoming Innovation <AutoAwesomeIcon fontSize='small' /></h1>
+        >
+          <AutoAwesomeIcon fontSize='small' /> Unveiling Madha Agencies' Upcoming Innovation <AutoAwesomeIcon fontSize='small' />
+        </h1>
+        <Marquee>
+          <img className='marquee-image' src={WashingMachine01} />
+          <img className='marquee-image' src={WashingMachine02} />
+          <img className='marquee-image' src={Phone} />
+          <img className='marquee-image' src={Phone2} />
+          <img className='marquee-image' src={Frige} />
+          <img className='marquee-image' src={AC} />
+        </Marquee>
+      </div>
+      
+      {/* <div className='upcomings_slider'>
         <div className='upcomings_slider-container'>
           <span style={{"--i": 1}}><img src={WashingMachine01} /></span>
           <span style={{"--i": 2}}><img src={WashingMachine02} /></span>
@@ -70,7 +82,8 @@ const Upcoming = () => {
           <span style={{"--i": 5}}><img src={Frige} /></span>
           <span style={{"--i": 6}}><img src={AC} /></span>
         </div>
-      </div>
+      </div> */}
+      
       <div className="upcoming-products-container">
         <div className="product-list">
           {productsData.map((product, i) => (

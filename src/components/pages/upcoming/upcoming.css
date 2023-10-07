@@ -148,6 +148,12 @@
     transition: 2s;
    }
 
+   .marquee-image {
+    max-width: 250px;
+    max-height: 250px;
+    margin: 100px 50px;
+   }
+
    @media screen and (max-width: 1200px) {
      .shopnow_container {
       flex-direction: column;

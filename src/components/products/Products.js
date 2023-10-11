@@ -50,10 +50,9 @@ const Products = () => {
       </div>
       <div style={{display: 'flex', flexDirection: 'column', gap: '25px', backgroundColor: 'black'}}>
         {tvs.map((tv, index) => (
-        <>
+        <div key={tv.id}>
           {isMobile ? (
             <Box
-              key={tv.id}
               xs={12}
               sx={{
                 minHeight: '90vh',
@@ -175,7 +174,7 @@ const Products = () => {
               </Box>
             </Fade>
           )}
-        </>
+        </div>
       ))}
       </div>
     </>

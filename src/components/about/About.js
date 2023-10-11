@@ -172,7 +172,7 @@ const About = () => {
                 lineHeight: 2,
               }}
             >
-              Madha Agencies, based in Tamil Nadu, serves as a distributor for their proprietary line of LED TVs, household appliances, and various other consumer electronics. The establishment, established in 2016 and helmed by Mr. George Wilson, has successfully orchestrated the distribution of its offerings through a network of dealers and distributors across Southern Tamil Nadu, Pondicherry, and Kerala.
+              AVAE is proudly owned by Matha Agency, based in Tamil Nadu, serves as a distributor for their proprietary line of LED TVs, household appliances, and various other consumer electronics. The establishment, established in 2016 and helmed by Mr. George Wilson, has successfully orchestrated the distribution of its offerings through a network of dealers and distributors across Southern Tamil Nadu, Pondicherry, and Kerala.
             </p>
             <p
               style={{
@@ -288,7 +288,7 @@ const About = () => {
                 color: "white"
               }}
             >
-              Madha Agencies, based in Tamil Nadu, serves as a distributor for their proprietary line of LED TVs, household appliances, and various other consumer electronics. The establishment, established in 2016 and helmed by Mr. George Wilson, has successfully orchestrated the distribution of its offerings through a network of dealers and distributors across Southern Tamil Nadu, Pondicherry, and Kerala.
+              AVAE is proudly owned by Matha Agency, based in Tamil Nadu, serves as a distributor for their proprietary line of LED TVs, household appliances, and various other consumer electronics. The establishment, established in 2016 and helmed by Mr. George Wilson, has successfully orchestrated the distribution of its offerings through a network of dealers and distributors across Southern Tamil Nadu, Pondicherry, and Kerala.
               At the core of our identity lie hallmarks such as an extensive product portfolio, premium brand collaborations, unwavering customer contentment, and competitive pricing. Our expertise encompasses a diverse array of home appliances and television models. Moreover, augmenting our repertoire, we proudly introduce our very own branded television – AVAE – a product that has not only been unveiled but has also secured official trademark recognition.
             </p>
           </div>

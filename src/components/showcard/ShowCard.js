@@ -15,7 +15,7 @@ const ShowCard = ({id, name, price, imageSrc2, series, description, description2
       <hr width="100%" />
       <div className='showcard-details'>
           <h4>{name}</h4>
-          <h4>{`₹ ${price}`}</h4>
+          <h4 style={{color: '#cc2643'}}>{`₹ ${price}`}</h4>
       </div>
       <div className='showcard-details'>
         <p style={{fontSize: 'small'}}>{description2}</p>

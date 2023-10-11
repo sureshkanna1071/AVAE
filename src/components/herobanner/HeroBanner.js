@@ -17,9 +17,20 @@ import Mobile3 from "../../assets/Mobile3.jpg"
 import Mobile4 from "../../assets/Mobile4.jpg"
 import Mobile5 from "../../assets/Mobile5.jpg"
 import Mobile6 from "../../assets/Mobile6.jpg"
+import axios from 'axios';
 
 const HeroBanner = () => {
   const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    axios.get("/")
+         .then((res) => {
+          console.log("server started")
+         })
+         .catch((err) => {
+          console.log(err);
+         })
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {

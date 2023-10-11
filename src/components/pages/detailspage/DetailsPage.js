@@ -61,7 +61,7 @@ const DetailsPage = () => {
             <div className='details_imgcontainer'>
               <div className='details_imgcontainer-small'>
                 {currentItem && currentItem?.image_urls.map((img, i) => 
-                  <div style={{border: imageSrc === img && "1.5px solid black", height: '70px', width: "70px", padding: "5px"}} onClick={() => setImageSrc(img)}><img src={img} width="60px" style={{maxHeight: "60px",}} /></div>
+                  <div key={i} style={{border: imageSrc === img && "1.5px solid black", height: '70px', width: "70px", padding: "5px"}} onClick={() => setImageSrc(img)}><img src={img} width="60px" style={{maxHeight: "60px",}} /></div>
                 )}
               </div>
               <div className='details_imgcontainer-large'>

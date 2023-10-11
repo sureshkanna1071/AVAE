@@ -123,7 +123,7 @@ const Products = () => {
                   // backgroundImage: `url(${bgs[index]})`,
                   // backgroundSize: 'cover',
                   // background: "rgb(0,173,181)",
-                  background: index % 2 === 0 ? "linear-gradient(118deg, rgba(0,173,181,0) 32%, rgba(0,0,0,0.5999649859943977) 63%, rgba(0,0,0,1) 100%)" : "linear-gradient(62deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5999649859943977) 32%, rgba(0,173,181,0) 63%)"
+                  background: index % 2 === 0 ? "linear-gradient(220deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6859593837535014) 50%, rgba(0,0,0,0) 100%)" : "linear-gradient(62deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5999649859943977) 32%, rgba(0,173,181,0) 63%)"
                 }}
               >
                 <img style={{position: "absolute", width: "100%", height: '100%', zIndex: '-1'}} src={bgs[index]} />

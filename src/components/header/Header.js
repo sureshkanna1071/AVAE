@@ -3,7 +3,7 @@ import "./header.css"
 import {Badge, Button, IconButton, Popover, Modal, Tooltip, Hidden} from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import NewLogo from "../../assets/NewLogo.png";
+import NewLogo from "../../assets/NewLogo.jpeg";
 import { useLocation, useNavigate } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useContext } from 'react';
@@ -47,8 +47,12 @@ const Header = () => {
            startIcon={<StoreIcon />}
            className='header_menu-button'
            onClick={() => navigate("/shop")}
+           sx={{
+            backgroundColor: "#02335f",
+            "&:hover": {backgroundColor: "#3a3a3a", boxShadow: "0 0 10px #5a5a5a"}
+           }}
         >
-          STORE
+          Shop
         </Button>
        </Hidden>
        
@@ -59,7 +63,7 @@ const Header = () => {
           </Badge>
           {orders 
             && <Badge sx={{marginRight: '8px'}} badgeContent={orders && orders.length} color="primary" overlap="circular">
-                <Tooltip title="My Orders"><IconButton onClick={() => setOpenOrders(true)}><TbTruckDelivery /></IconButton></Tooltip>
+                <Tooltip title="My Orders"><IconButton onClick={() => navigate("/orders")}><TbTruckDelivery /></IconButton></Tooltip>
               </Badge>
           }
         </div>
@@ -125,7 +129,7 @@ const Header = () => {
             </div>
           </div>
         </Modal>
-        <Modal
+        {/* <Modal
           open={openOrders}
           onClose={() => setOpenOrders(false)}
           sx={{
@@ -143,8 +147,8 @@ const Header = () => {
             <hr />
             <div className='cart_items'>
             {orders && orders?.map((order, i) =>
-              <>
-                <div key={i} className='cart_items-box'>
+              <div key={i} > 
+                <div className='cart_items-box'>
                   <img src={order?.image_urls[0]} alt="" width="75px" />
                   <p style={{width: "60%"}}>{order?.title}</p>
                   <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}} >
@@ -152,11 +156,11 @@ const Header = () => {
                   </div>
                 </div>
                 <hr />
-              </>
+              </div>
             )}
             </div>
           </div>
-        </Modal>
+        </Modal> */}
 
         {/* <Menu
           open={open}
